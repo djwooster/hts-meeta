@@ -1,0 +1,48 @@
+<svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Coral background -->
+  <rect width="400" height="400" fill="#D4614A"/>
+
+  <!-- Circle safe zone guide (invisible) — Gmail crops to ~360px circle centered -->
+
+  <!-- X-STAR SYMBOL — shifted up slightly so center jewel is in middle of circle -->
+  <!-- NW petal — seafoam -->
+  <path d="M200 185 L40 25 C70 95 130 150 200 185Z" fill="#5AADA8"/>
+  <path d="M200 185 L40 25 C110 55 165 115 200 185Z" fill="#5AADA8" opacity="0.55"/>
+
+  <!-- NE petal — navy -->
+  <path d="M200 185 L360 25 C330 95 270 150 200 185Z" fill="#2B5278"/>
+  <path d="M200 185 L360 25 C290 55 235 115 200 185Z" fill="#2B5278" opacity="0.55"/>
+
+  <!-- SE petal — seafoam -->
+  <path d="M200 185 L360 345 C330 275 270 220 200 185Z" fill="#5AADA8"/>
+  <path d="M200 185 L360 345 C290 315 235 255 200 185Z" fill="#5AADA8" opacity="0.55"/>
+
+  <!-- SW petal — navy -->
+  <path d="M200 185 L40 345 C70 275 130 220 200 185Z" fill="#2B5278"/>
+  <path d="M200 185 L40 345 C110 315 165 255 200 185Z" fill="#2B5278" opacity="0.55"/>
+
+  <!-- Center jewel -->
+  <circle cx="200" cy="185" r="36" fill="#D4614A"/>
+  <circle cx="200" cy="185" r="20" fill="#1A3A58"/>
+  <circle cx="200" cy="185" r="9" fill="#5AADA8" opacity="0.5"/>
+
+  <!-- HTS — large, centered below symbol, well within circle -->
+  <text x="200" y="270" text-anchor="middle"
+    font-family="Georgia, serif"
+    font-size="42"
+    font-weight="normal"
+    letter-spacing="10"
+    fill="rgba(255,255,255,0.95)">HTS</text>
+
+  <!-- Thin rule -->
+  <rect x="150" y="282" width="100" height="1" fill="rgba(255,255,255,0.3)"/>
+
+  <!-- Studio name — small, within circle -->
+  <text x="200" y="308" text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="10"
+    letter-spacing="5"
+    fill="rgba(255,255,255,0.6)">HALE TEXTILE</text>
+
+</svg>

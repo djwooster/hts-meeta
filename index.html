@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hale Textile Studio — Luxury Fabric &amp; Wallpaper Showroom | Honolulu, Hawaii</title>
+<meta name="description" content="Hawaii's home fabric library. Luxury fabrics, wallpaper collections, and custom home accessories at Hub Coworking, Kaka'ako, Honolulu. Open to designers and homeowners.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://haletextilestudio.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:title" content="Hale Textile Studio — Luxury Fabric &amp; Wallpaper Showroom | Honolulu, Hawaii">
+<meta property="og:description" content="Hawaii's home fabric library. Honolulu's luxury fabric showroom — fabrics, wallpaper, and custom accessories.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://haletextilestudio.com/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --coral:     #D4614A;
+  --coral-dk:  #B84D38;
+  --coral-lt:  #E8907A;
+  --coral-pale:#F9E8E4;
+  --navy:      #2B5278;
+  --navy-dk:   #1A3A58;
+  --navy-lt:   #3D6A8A;
+  --seafoam:   #5AADA8;
+  --sf-lt:     #7BBFBC;
+  --ocean:     #0A2A3A;
+  --gold:      #C8A96E;
+  --shell:     #F8F4EC;
+  --sand:      #EDE0CC;
+  --mid:       #5A5248;
+  --warm-blk:  #14100C;
+  --white:     #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background: var(--shell);
+  color: var(--warm-blk);
+  overflow-x: hidden;
+}
+
+/* ── TYPOGRAPHY ── */
+.serif { font-family: 'Cormorant Garamond', serif; }
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+
+/* ── PAGES ── */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--coral);
+  border-bottom: 2px solid var(--coral-dk);
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+
+.nav-mark {
+  display: flex; align-items: center; gap: 14px;
+  cursor: pointer; text-decoration: none;
+}
+.nav-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-weight: 300;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--white); line-height: 1;
+}
+.nav-name span { color: rgba(255,255,255,0.55); font-size: 11px; display: block; letter-spacing: 0.5em; margin-top: 2px; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 2px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 11px; letter-spacing: 0.45em; text-transform: uppercase;
+  color: rgba(255,255,255,0.75); text-decoration: none;
+  padding: 8px 14px; cursor: pointer;
+  transition: color 0.2s;
+  border-bottom: 1.5px solid transparent;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+.nav-cta {
+  background: var(--white);
+  color: var(--coral) !important;
+  padding: 8px 18px !important;
+  letter-spacing: 0.35em !important;
+  border-bottom: none !important;
+  font-weight: 400 !important;
+  font-size: 11px !important;
+}
+.nav-cta:hover { background: var(--shell) !important; color: var(--coral) !important; }
+
+/* ── SHARED SECTION STYLES ── */
+.section-label {
+  font-size: 10px; letter-spacing: 0.55em; text-transform: uppercase;
+  color: var(--mid); margin-bottom: 10px;
+}
+.section-rule { width: 28px; height: 1.5px; margin-bottom: 28px; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+/* ── HERO SYMBOL SVG helper ── */
+.hts-symbol { display: inline-block; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.fade-up { animation: fadeUp 0.8s ease forwards; }
+.fade-up-2 { animation: fadeUp 0.8s 0.15s ease forwards; opacity: 0; }
+.fade-up-3 { animation: fadeUp 0.8s 0.3s ease forwards; opacity: 0; }
+.fade-up-4 { animation: fadeUp 0.8s 0.45s ease forwards; opacity: 0; }
+
+/* ══════════════════════════════════
+   HOME PAGE
+══════════════════════════════════ */
+#home { background: var(--shell); }
+
+.hero {
+  background: var(--coral);
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 120px 40px 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -120px; right: -120px;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: var(--coral-dk); opacity: 0.3;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -80px; left: -80px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: rgba(43,82,120,0.15);
+}
+
+.hero-inner {
+  max-width: 700px; margin: 0 auto;
+  display: block;
+  position: relative; z-index: 1;
+}
+
+@media (min-width: 900px) {
+  .hero-inner {
+    max-width: 1200px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+}
+
+.hero-text {}
+.hero-eyebrow {
+  font-size: 11px; letter-spacing: 0.55em; text-transform: uppercase;
+  color: rgba(255,255,255,0.65); margin-bottom: 20px;
+}
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7vw, 84px); font-weight: 300;
+  line-height: 1.05; color: var(--white); margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.hero-h1 em { font-style: italic; color: rgba(255,255,255,0.75); }
+
+.hero-rule { width: 32px; height: 1.5px; background: rgba(255,255,255,0.4); margin-bottom: 20px; }
+
+.hero-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-style: italic; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.85); margin-bottom: 32px; line-height: 1.5;
+}
+.hero-desc {
+  font-size: 11px; letter-spacing: 0.38em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); margin-bottom: 40px; line-height: 2.2;
+}
+
+.btn {
+  display: inline-block; cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px; letter-spacing: 0.45em; text-transform: uppercase;
+  padding: 16px 32px; text-decoration: none;
+  transition: all 0.25s;
+}
+.btn-white { background: var(--white); color: var(--coral); }
+.btn-white:hover { background: var(--shell); }
+.btn-outline-white {
+  border: 1px solid rgba(255,255,255,0.5); color: var(--white);
+  margin-left: 12px;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+.btn-coral { background: var(--coral); color: var(--white); }
+.btn-coral:hover { background: var(--coral-dk); }
+.btn-outline-navy {
+  border: 1px solid var(--navy); color: var(--navy);
+}
+.btn-outline-navy:hover { background: var(--navy); color: var(--white); }
+
+.hero-symbol {
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Hero bottom strip */
+.hero-strip {
+  background: var(--navy);
+  display: flex;
+  padding: 0 40px;
+}
+.strip-item {
+  flex: 1; padding: 20px 24px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; gap: 12px;
+}
+.strip-item:last-child { border-right: none; }
+.strip-icon { flex-shrink: 0; }
+.strip-text { }
+.strip-label {
+  font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--seafoam); margin-bottom: 3px;
+}
+.strip-val {
+  font-size: 16px; font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic;
+  color: rgba(255,255,255,0.75); letter-spacing: 0.05em;
+}
+
+/* About strip */
+.about-strip {
+  padding: 80px 40px;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.about-left .section-label { color: var(--coral); }
+.about-h2 {
+  font-size: clamp(36px, 4vw, 52px); line-height: 1.15;
+  color: var(--ocean); margin-bottom: 20px;
+}
+.about-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-style: italic;
+  line-height: 1.9; color: var(--mid);
+  margin-bottom: 28px;
+}
+.about-right {
+  background: var(--coral);
+  padding: 52px 44px;
+}
+.about-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300;
+  line-height: 1.4; color: var(--white);
+  font-style: italic; margin-bottom: 20px;
+}
+.about-cite {
+  font-size: 7.5px; letter-spacing: 0.45em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+/* Services grid */
+.services {
+  background: var(--ocean);
+  padding: 80px 40px;
+}
+.services-inner { max-width: 1200px; margin: 0 auto; }
+.services .section-label { color: rgba(90,173,168,0.7); text-align: center; }
+.services-h2 {
+  font-size: clamp(32px, 3.5vw, 48px); color: var(--white);
+  text-align: center; margin-bottom: 52px; letter-spacing: 0.05em;
+}
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.service-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 40px 32px;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s;
+}
+.service-card:hover {
+  background: rgba(90,173,168,0.08);
+  border-color: rgba(90,173,168,0.2);
+}
+.service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 300;
+  color: rgba(90,173,168,0.25); margin-bottom: 16px;
+}
+.service-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: var(--white);
+  margin-bottom: 12px; font-weight: 300;
+}
+.service-body {
+  font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); line-height: 2.4;
+}
+.service-arrow {
+  margin-top: 24px; font-size: 10px; letter-spacing: 0.42em;
+  text-transform: uppercase; color: var(--seafoam); cursor: pointer;
+}
+
+/* Instagram teaser */
+.ig-teaser {
+  background: var(--coral-pale);
+  padding: 64px 40px; text-align: center;
+  border-top: 2px solid var(--sand);
+}
+.ig-teaser .section-label { color: var(--coral); }
+.ig-h { font-size: 36px; color: var(--ocean); margin-bottom: 12px; }
+.ig-body { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: var(--mid); margin-bottom: 28px; }
+
+/* ══════════════════════════════════
+   FABRIC LIBRARY PAGE
+══════════════════════════════════ */
+#fabric { background: var(--shell); }
+
+.page-hero {
+  background: var(--coral);
+  padding: 120px 40px 72px;
+  position: relative; overflow: hidden;
+}
+.page-hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--navy), var(--seafoam), var(--navy));
+}
+.page-hero-inner { max-width: 1200px; margin: 0 auto; }
+.page-eyebrow {
+  font-size: 11px; letter-spacing: 0.55em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-bottom: 16px;
+}
+.page-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 6vw, 72px); font-weight: 300;
+  color: var(--white); margin-bottom: 14px; letter-spacing: 0.05em;
+}
+.page-tagline {
+  font-size: 20px; font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic;
+  color: rgba(255,255,255,0.75); letter-spacing: 0.1em;
+}
+
+.fabric-intro {
+  padding: 64px 40px;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr;
+  gap: 64px; align-items: start;
+}
+.fabric-intro-text h2 {
+  font-size: 36px; color: var(--ocean); margin-bottom: 16px;
+}
+.fabric-intro-text p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; line-height: 1.9; color: var(--mid);
+  font-style: italic; margin-bottom: 12px;
+}
+.fabric-stats { display: flex; flex-direction: column; gap: 24px; }
+.stat-card {
+  background: var(--coral);
+  padding: 28px 24px;
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 300; color: var(--white);
+  line-height: 1; margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 7.5px; letter-spacing: 0.42em; text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+.fabric-categories {
+  background: var(--sand);
+  padding: 64px 40px;
+}
+.fabric-categories-inner { max-width: 1200px; margin: 0 auto; }
+.cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 36px; }
+.cat-card {
+  background: var(--shell);
+  border: 1px solid #DDD8CC;
+  padding: 32px 20px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.cat-card:hover {
+  border-color: var(--coral);
+  transform: translateY(-2px);
+}
+.cat-icon { margin-bottom: 14px; }
+.cat-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; color: var(--ocean); margin-bottom: 6px;
+}
+.cat-desc {
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--mid); line-height: 2.2;
+}
+
+.fabric-cta {
+  background: var(--navy);
+  padding: 64px 40px; text-align: center;
+}
+.fabric-cta h2 { font-size: 36px; color: var(--white); margin-bottom: 12px; }
+.fabric-cta p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-style: italic; color: rgba(255,255,255,0.65);
+  margin-bottom: 28px;
+}
+
+/* ══════════════════════════════════
+   WALLPAPER PAGE
+══════════════════════════════════ */
+#wallpaper { background: var(--shell); }
+
+.wp-grid {
+  padding: 64px 40px;
+  max-width: 1200px; margin: 0 auto;
+}
+.wp-intro {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  margin-bottom: 52px; align-items: center;
+}
+.wp-intro h2 { font-size: 42px; color: var(--ocean); margin-bottom: 16px; }
+.wp-intro p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic; color: var(--mid);
+  line-height: 1.9; margin-bottom: 16px;
+}
+.wp-accent {
+  background: var(--seafoam);
+  padding: 36px 32px;
+}
+.wp-accent p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 300; color: var(--ocean);
+  line-height: 1.6; font-style: italic;
+}
+
+.wp-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px; }
+.wp-type {
+  border-top: 3px solid var(--coral);
+  background: var(--shell);
+  border: 1px solid #DDD8CC;
+  border-top: 3px solid var(--coral);
+  padding: 28px 24px;
+}
+.wp-type-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; color: var(--ocean); margin-bottom: 8px;
+}
+.wp-type-desc {
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--mid); line-height: 2.4;
+}
+
+/* ══════════════════════════════════
+   CUSTOM ACCESSORIES PAGE
+══════════════════════════════════ */
+#accessories { background: var(--shell); }
+
+.acc-hero-split {
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 60vh;
+}
+.acc-left {
+  background: var(--coral);
+  padding: 80px 52px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.acc-right {
+  background: var(--ocean);
+  padding: 80px 52px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.acc-products {
+  padding: 64px 40px;
+  max-width: 1200px; margin: 0 auto;
+}
+.acc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 36px; }
+.acc-card {
+  background: var(--sand);
+  padding: 36px 28px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+.acc-card:hover { border-bottom-color: var(--coral); }
+.acc-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: var(--ocean); margin-bottom: 8px;
+}
+.acc-price {
+  font-size: 16px; font-family: 'Cormorant Garamond', serif;
+  font-size: 14px; font-style: italic; color: var(--coral);
+  margin-bottom: 12px;
+}
+.acc-desc {
+  font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--mid); line-height: 2.4;
+}
+
+/* ══════════════════════════════════
+   TRADE PROGRAM PAGE
+══════════════════════════════════ */
+#trade { background: var(--ocean); }
+
+.trade-hero {
+  background: var(--ocean);
+  padding: 120px 40px 72px;
+  position: relative;
+}
+.trade-hero-inner { max-width: 1200px; margin: 0 auto; }
+
+.trade-benefits {
+  background: var(--shell);
+  padding: 64px 40px;
+}
+.trade-benefits-inner { max-width: 1200px; margin: 0 auto; }
+.benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 36px; }
+.benefit-card {
+  padding: 36px 32px;
+  background: var(--white);
+  border-left: 4px solid var(--coral);
+}
+.benefit-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; color: var(--ocean); margin-bottom: 10px;
+}
+.benefit-body {
+  font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--mid); line-height: 2.4;
+}
+
+.trade-philosophy {
+  background: var(--coral);
+  padding: 72px 40px; text-align: center;
+}
+.trade-philosophy-inner { max-width: 760px; margin: 0 auto; }
+.phil-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2.5vw, 28px); font-weight: 300;
+  line-height: 1.6; color: var(--white); font-style: italic;
+  margin-bottom: 20px;
+}
+
+.trade-apply {
+  background: var(--navy);
+  padding: 72px 40px;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+}
+
+/* ══════════════════════════════════
+   ABOUT PAGE
+══════════════════════════════════ */
+#about { background: var(--shell); }
+
+.about-hero {
+  background: var(--coral);
+  padding: 120px 40px 72px;
+}
+.about-story {
+  padding: 72px 40px;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
+  align-items: start;
+}
+.about-story h2 { font-size: 44px; color: var(--ocean); margin-bottom: 20px; }
+.about-story p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic; line-height: 1.9;
+  color: var(--mid); margin-bottom: 16px;
+}
+.about-values {
+  background: var(--ocean);
+  padding: 72px 40px;
+}
+.about-values-inner { max-width: 1200px; margin: 0 auto; }
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 36px; }
+.value-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 36px 28px;
+}
+.value-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: var(--seafoam); margin-bottom: 10px;
+}
+.value-body {
+  font-size: 16px; font-family: 'Cormorant Garamond', serif;
+  font-size: 14px; font-style: italic; line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ══════════════════════════════════
+   CONTACT PAGE
+══════════════════════════════════ */
+#contact { background: var(--shell); }
+
+.contact-split {
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh;
+}
+.contact-left {
+  background: var(--coral);
+  padding: 120px 52px 72px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.contact-right {
+  background: var(--shell);
+  padding: 120px 52px 72px;
+}
+.contact-h { font-size: 52px; color: var(--white); margin-bottom: 20px; line-height: 1.1; }
+.contact-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic;
+  color: rgba(255,255,255,0.75); line-height: 1.9; margin-bottom: 36px;
+}
+.contact-detail { display: flex; flex-direction: column; gap: 20px; }
+.cd-label {
+  font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); margin-bottom: 4px;
+}
+.cd-val {
+  font-size: 18px; font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; color: var(--white); letter-spacing: 0.05em;
+}
+
+/* Form */
+.form-group { margin-bottom: 24px; }
+.form-label {
+  display: block; font-size: 10px; letter-spacing: 0.42em;
+  text-transform: uppercase; color: var(--mid); margin-bottom: 8px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid #DDD8CC;
+  padding: 12px 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px; color: var(--warm-blk);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--coral);
+}
+.form-textarea { height: 120px; resize: vertical; }
+.form-submit {
+  background: var(--coral); color: var(--white);
+  border: none; cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px; letter-spacing: 0.45em; text-transform: uppercase;
+  padding: 14px 32px; width: 100%;
+  transition: background 0.2s;
+}
+.form-submit:hover { background: var(--coral-dk); }
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer {
+  background: var(--ocean);
+  padding: 60px 40px 32px;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 48px;
+}
+.footer-brand {}
+.footer-mark { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-weight: 300;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--white); line-height: 1;
+}
+.footer-name span { display: block; font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.5em; margin-top: 2px; }
+.footer-tagline {
+  font-size: 16px; font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic;
+  color: var(--seafoam); margin-bottom: 8px;
+}
+.footer-desc {
+  font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); line-height: 2.2;
+}
+.footer-col-title {
+  font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase;
+  color: var(--seafoam); margin-bottom: 16px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-links a {
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); text-decoration: none; cursor: pointer;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-copy {
+  font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+.footer-ig {
+  font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--seafoam); cursor: pointer;
+}
+
+/* ── SHARED UTILS ── */
+.mt-0 { margin-top: 0; }
+.pt-nav { padding-top: 64px; }
+.text-white { color: var(--white); }
+.text-seafoam { color: var(--seafoam); }
+.text-coral { color: var(--coral); }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+
+  /* NAV */
+  nav { padding: 0 16px; height: 56px; }
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 56px; left: 0; right: 0; background: var(--coral-dk); padding: 16px; gap: 4px; z-index: 999; }
+  .nav-toggle { display: block; }
+  .nav-name span { display: none; }
+  .pt-nav { padding-top: 56px; }
+
+  /* HERO — hide the 600px circles causing overflow */
+  .hero { padding: 48px 20px; min-height: auto; overflow: hidden; }
+  .hero::before, .hero::after { display: none; }
+  .hero-inner { display: block; max-width: 100%; padding: 0; }
+  .hero-symbol { display: none; }
+  .hero-h1 { font-size: 36px; line-height: 1.1; }
+
+  /* STRIP */
+  .hero-strip { grid-template-columns: 1fr 1fr; overflow: hidden; }
+  .strip-item { padding: 14px 12px; }
+
+  /* ALL MULTI-COLUMN LAYOUTS */
+  .about-strip { display: block; padding: 36px 20px; }
+  .fabric-intro { display: block; padding: 36px 20px; }
+  .wp-intro { display: block; }
+  .about-story { display: block; padding: 36px 20px; }
+  .footer-inner { display: block; padding: 36px 20px; }
+  .acc-hero-split { display: block; min-height: auto; }
+  .contact-split { display: block; min-height: auto; }
+  .trade-apply { display: block; padding: 36px 20px; }
+  .contact-left { min-height: auto; padding: 40px 20px; }
+  .contact-right { padding: 32px 20px; }
+  .acc-left { min-height: auto; padding: 36px 20px; }
+  .acc-right { padding: 36px 20px; }
+
+  /* GRIDS */
+  .services-grid, .values-grid, .benefits-grid, .acc-grid { display: block; }
+  .cat-grid, .wp-types { grid-template-columns: 1fr 1fr; }
+  .fabric-stats { grid-template-columns: 1fr 1fr; padding: 20px; }
+
+  /* SECTION PADDING */
+  .services-inner, .fabric-categories-inner, .trade-philosophy-inner,
+  .trade-benefits-inner, .about-values-inner { padding: 36px 20px; }
+  .page-hero, .trade-hero-inner, .about-hero { padding: 40px 20px 32px; }
+  .fabric-cta, .wp-cta, .ig-teaser { padding: 40px 20px; }
+  .wp-grid { padding: 36px 20px; }
+
+  /* FOOTER */
+  .footer-bottom { flex-direction: column; text-align: center; padding: 14px 20px; }
+
+  /* TYPE */
+  .hero-h1 { font-size: 36px; }
+  .about-h2, .contact-h, .services-h2 { font-size: 26px; }
+  .page-hero-inner h1, .trade-hero-inner h1 { font-size: 28px; }
+}
+
+@media (max-width: 420px) {
+  .hero-strip, .cat-grid, .wp-types, .fabric-stats { grid-template-columns: 1fr; }
+  .hero-h1 { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav>
+  <a class="nav-mark" onclick="showPage('home')">
+    <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+      <path d="M16 16 C13 13 8 7 3 3 C8 8 13 13 16 16Z" fill="#5AADA8"/>
+      <path d="M16 16 C13 13 6 8 3 3 C6 6 12 12 16 16Z" fill="#5AADA8" opacity="0.45"/>
+      <path d="M16 16 C19 13 24 7 29 3 C24 8 19 13 16 16Z" fill="#2B5278"/>
+      <path d="M16 16 C19 13 26 8 29 3 C26 6 20 12 16 16Z" fill="#2B5278" opacity="0.45"/>
+      <path d="M16 16 C19 19 24 25 29 29 C24 24 19 19 16 16Z" fill="#5AADA8"/>
+      <path d="M16 16 C19 19 26 24 29 29 C26 26 20 20 16 16Z" fill="#5AADA8" opacity="0.45"/>
+      <path d="M16 16 C13 19 8 25 3 29 C8 24 13 19 16 16Z" fill="#2B5278"/>
+      <path d="M16 16 C13 19 6 24 3 29 C6 26 12 20 16 16Z" fill="#2B5278" opacity="0.45"/>
+      <circle cx="16" cy="16" r="3" fill="#D4614A"/>
+    </svg>
+    <div class="nav-name">
+      Hale Textile Studio
+      <span>Hawaii's Home Fabric Library</span>
+    </div>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('fabric')" id="nav-fabric">Fabric Library</a></li>
+    <li><a onclick="showPage('wallpaper')" id="nav-wallpaper">Wallpaper</a></li>
+    <li><a onclick="showPage('accessories')" id="nav-accessories">Accessories</a></li>
+    <li><a onclick="showPage('trade')" id="nav-trade">Trade Program</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact" class="nav-cta">Visit Us</a></li>
+  </ul>
+
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+    <svg width="22" height="16" fill="none">
+      <line x1="0" y1="2" x2="22" y2="2" stroke="white" stroke-width="2"/>
+      <line x1="0" y1="8" x2="22" y2="8" stroke="white" stroke-width="2"/>
+      <line x1="0" y1="14" x2="22" y2="14" stroke="white" stroke-width="2"/>
+    </svg>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════
+     HOME PAGE
+══════════════════════════════════ -->
+<div id="home" class="page active pt-nav">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow fade-up">Hawaii's Home Fabric Library · Est. 2026</div>
+        <h1 class="hero-h1 fade-up-2">Your creative<br>space for<br><em>the home.</em></h1>
+        <div class="hero-rule fade-up-3"></div>
+        <div class="hero-tag fade-up-3">Thousands of luxury fabrics. Wallpaper.<br>Custom home accessories. All in one studio.</div>
+        <div class="hero-desc fade-up-4">Luxury fabric · Wallpaper · Custom home accessories<br>Hub Coworking · Honolulu, Hawaii</div>
+        <div class="fade-up-4">
+          <span class="btn btn-white" onclick="showPage('fabric')">Explore the Library</span>
+          <span class="btn btn-outline-white" onclick="showPage('contact')">Visit the Studio</span>
+        </div>
+      </div>
+
+      <div class="hero-symbol fade-up-3">
+        <svg viewBox="0 0 320 320" width="300" height="300" fill="none">
+          <!-- Large hero X-star -->
+          <circle cx="160" cy="160" r="148" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+          <circle cx="160" cy="160" r="130" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
+          <!-- NW seafoam -->
+          <path d="M160,160 C148,148 124,112 80,80 C112,112 148,148 160,160Z" fill="#5AADA8"/>
+          <path d="M160,160 C140,148 108,116 72,88 C108,116 144,150 160,160Z" fill="#5AADA8" opacity="0.45"/>
+          <!-- NE navy -->
+          <path d="M160,160 C172,148 196,112 240,80 C208,112 172,148 160,160Z" fill="#2B5278"/>
+          <path d="M160,160 C180,148 212,116 248,88 C212,116 176,150 160,160Z" fill="#2B5278" opacity="0.45"/>
+          <!-- SE seafoam -->
+          <path d="M160,160 C172,172 196,208 240,240 C208,208 172,172 160,160Z" fill="#5AADA8"/>
+          <path d="M160,160 C180,172 212,204 248,232 C212,204 176,170 160,160Z" fill="#5AADA8" opacity="0.45"/>
+          <!-- SW navy -->
+          <path d="M160,160 C148,172 124,208 80,240 C112,208 148,172 160,160Z" fill="#2B5278"/>
+          <path d="M160,160 C140,172 108,204 72,232 C108,204 144,170 160,160Z" fill="#2B5278" opacity="0.45"/>
+          <!-- Center -->
+          <circle cx="160" cy="160" r="20" fill="#D4614A"/>
+          <circle cx="160" cy="160" r="10" fill="#2B5278" opacity="0.5"/>
+          <circle cx="160" cy="160" r="5" fill="#5AADA8" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strip -->
+  <div class="hero-strip">
+    <div class="strip-item">
+      <svg viewBox="0 0 20 20" width="16" height="16" fill="none">
+        <path d="M10 10 C8 8 5 5 2 2 C5 5 8 8 10 10Z" fill="#5AADA8"/>
+        <path d="M10 10 C12 8 15 5 18 2 C15 5 12 8 10 10Z" fill="#2B5278"/>
+        <path d="M10 10 C12 12 15 15 18 18 C15 15 12 12 10 10Z" fill="#5AADA8"/>
+        <path d="M10 10 C8 12 5 15 2 18 C5 15 8 12 10 10Z" fill="#2B5278"/>
+        <circle cx="10" cy="10" r="2" fill="#D4614A"/>
+      </svg>
+      <div class="strip-text">
+        <div class="strip-label">Location</div>
+        <div class="strip-val">Hub Coworking · Honolulu</div>
+      </div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-text">
+        <div class="strip-label">Open to</div>
+        <div class="strip-val">Designers · Homeowners · Everyone</div>
+      </div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-text">
+        <div class="strip-label">The library holds</div>
+        <div class="strip-val">Thousands of curated luxury fabrics</div>
+      </div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-text">
+        <div class="strip-label">Follow</div>
+        <div class="strip-val"><a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);text-decoration:none;display:inline-flex;align-items:center;gap:7px;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@haletextilestudio</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About strip -->
+  <div class="about-strip container">
+    <div class="about-left">
+      <div class="section-label" style="color:var(--coral);">What We Are</div>
+      <div class="section-rule" style="background:var(--coral);"></div>
+      <h2 class="about-h2">Not a store.<br>A library.</h2>
+      <p class="about-body">Hale Textile Studio is Hawaii's home fabric library — a living showroom where every surface showcases what becomes possible when you choose the right fabric.</p>
+      <p class="about-body">Come in. Touch everything. See what inspires you.</p>
+      <span class="btn btn-outline-navy" onclick="showPage('about')">Our Story</span>
+    </div>
+    <div class="about-right">
+      <div class="about-quote">"Not fast fashion for the home. The opposite — timeless, tactile, deeply personal, and unmistakably Hawaii."</div>
+      <div class="about-cite">Brand North Star · Hale Textile Studio</div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="services">
+    <div class="services-inner">
+      <div class="section-label">What We Offer</div>
+      <div class="section-rule" style="background:var(--seafoam);margin:10px auto 20px;"></div>
+      <h2 class="services-h2 serif">The Complete Resource<br><em style="color:rgba(255,255,255,0.55);">for the home.</em></h2>
+      <div class="services-grid">
+        <div class="service-card" onclick="showPage('fabric')">
+          <div class="service-num">01</div>
+          <div class="service-title">Fabric Library</div>
+          <div class="service-body">Upholstery · Drapery · Linen<br>Jacquard · Brocade · Tapestry<br>Thousands of luxury textiles<br>Available by the yard</div>
+          <div class="service-arrow">Explore →</div>
+        </div>
+        <div class="service-card" onclick="showPage('wallpaper')">
+          <div class="service-num">02</div>
+          <div class="service-title">Wallpaper</div>
+          <div class="service-body">Grasscloth · Linen · Woven<br>Printed · Textured · Embossed<br>Curated luxury collections<br>Sample viewing in studio</div>
+          <div class="service-arrow">Explore →</div>
+        </div>
+        <div class="service-card" onclick="showPage('accessories')">
+          <div class="service-num">03</div>
+          <div class="service-title">Custom Accessories</div>
+          <div class="service-body">Signature tote bags · Pillows<br>Table runners · Coverlets<br>Duvet covers · Sachets<br>Made from our fabric library</div>
+          <div class="service-arrow">Explore →</div>
+        </div>
+        <div class="service-card" onclick="showPage('trade')">
+          <div class="service-num">04</div>
+          <div class="service-title">Trade Program</div>
+          <div class="service-body">Open to all Hawaii designers<br>Studio space for client meetings<br>Sample loan program<br>Trade pricing · No exclusivity</div>
+          <div class="service-arrow">Learn More →</div>
+        </div>
+        <div class="service-card" onclick="showPage('contact')">
+          <div class="service-num">05</div>
+          <div class="service-title">Visit the Studio</div>
+          <div class="service-body">Hub Coworking · Honolulu<br>1050 Queen St · Suite 100<br>Open to designers &amp; public<br>Book a private studio session</div>
+          <div class="service-arrow">Get Directions →</div>
+        </div>
+        <div class="service-card" onclick="showPage('about')">
+          <div class="service-num">06</div>
+          <div class="service-title">Custom Furniture</div>
+          <div class="service-body">Represented luxury lines<br>Choose your fabric · We build it<br>Full upholstery service<br>Residential &amp; trade projects</div>
+          <div class="service-arrow">Learn More →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IG teaser -->
+  <div class="ig-teaser">
+    <div class="section-label">Follow Along</div>
+    <h2 class="ig-h serif">The Hand Test &amp; More</h2>
+    <p class="ig-body">Watch us pick up fabrics, describe what we feel, and show you what Hawaii looks like through textiles.</p>
+    <a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener" class="btn btn-coral" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="2" fill="none"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>@haletextilestudio</a>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     FABRIC LIBRARY PAGE
+══════════════════════════════════ -->
+<div id="fabric" class="page pt-nav">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Hawaii's Home Fabric Library</div>
+      <h1 class="page-h1">The Fabric<br>Library</h1>
+      <p class="page-tagline">Thousands of curated luxury textiles. Available by the yard. Available to touch.</p>
+    </div>
+  </div>
+
+  <div class="fabric-intro">
+    <div class="fabric-intro-text">
+      <div class="section-label" style="color:var(--coral);">The Collection</div>
+      <div class="section-rule" style="background:var(--coral);"></div>
+      <h2>A library of<br>the finest textiles.</h2>
+      <p>Our fabric library is the most comprehensive collection of luxury home textiles in Hawaii. Every swatch has been hand-selected for quality, beauty, and longevity — the opposite of fast fashion for the home.</p>
+      <p>Come in and touch everything. That is the whole point. Fabric is tactile. You cannot choose it from a screen.</p>
+      <p>Interior designers use our studio as their home base. Homeowners discover fabrics they never knew existed. Everyone leaves inspired.</p>
+    </div>
+    <div class="fabric-stats">
+      <div class="stat-card">
+        <div class="stat-num">1,000+</div>
+        <div class="stat-label">Fabric samples in library</div>
+      </div>
+      <div class="stat-card" style="background:var(--navy);">
+        <div class="stat-num" style="color:var(--seafoam);">50+</div>
+        <div class="stat-label">Luxury fabric lines</div>
+      </div>
+      <div class="stat-card" style="background:var(--ocean);">
+        <div class="stat-num" style="color:white;">By Yard</div>
+        <div class="stat-label">All fabrics available to order</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fabric-categories">
+    <div class="fabric-categories-inner">
+      <div class="section-label" style="color:var(--coral);">Categories</div>
+      <div class="section-rule" style="background:var(--coral);"></div>
+      <h2 class="serif" style="font-size:36px;color:var(--ocean);">What's in the library.</h2>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="cat-icon">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+              <rect x="4" y="8" width="24" height="16" rx="1" stroke="#D4614A" stroke-width="1.5" fill="none"/>
+              <line x1="4" y1="14" x2="28" y2="14" stroke="#D4614A" stroke-width="1" opacity="0.4"/>
+              <line x1="4" y1="20" x2="28" y2="20" stroke="#D4614A" stroke-width="1" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="cat-name">Upholstery</div>
+          <div class="cat-desc">Velvets · Boucle<br>Chenille · Leather<br>Performance fabrics</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+              <path d="M6 6 L26 6 L26 26 L6 26Z" stroke="#5AADA8" stroke-width="1.5" fill="none"/>
+              <path d="M6 12 L26 12" stroke="#5AADA8" stroke-width="0.8" opacity="0.5"/>
+              <path d="M6 18 L26 18" stroke="#5AADA8" stroke-width="0.8" opacity="0.5"/>
+              <path d="M12 6 L12 26" stroke="#5AADA8" stroke-width="0.8" opacity="0.5"/>
+              <path d="M18 6 L18 26" stroke="#5AADA8" stroke-width="0.8" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="cat-name">Drapery</div>
+          <div class="cat-desc">Linen · Silk blends<br>Sheer · Blackout<br>Printed panels</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+              <path d="M8 8 Q16 4 24 8 Q28 16 24 24 Q16 28 8 24 Q4 16 8 8Z" stroke="#2B5278" stroke-width="1.5" fill="none"/>
+              <path d="M12 12 Q16 10 20 12 Q22 16 20 20 Q16 22 12 20 Q10 16 12 12Z" stroke="#2B5278" stroke-width="0.8" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="cat-name">Jacquard & Brocade</div>
+          <div class="cat-desc">Woven patterns<br>Tapestry · Damask<br>Embroidered textiles</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+              <line x1="6" y1="6" x2="26" y2="26" stroke="#C8A96E" stroke-width="1.5"/>
+              <line x1="26" y1="6" x2="6" y2="26" stroke="#C8A96E" stroke-width="1.5"/>
+              <circle cx="16" cy="16" r="3" stroke="#C8A96E" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+          <div class="cat-name">Natural Fibers</div>
+          <div class="cat-desc">Linen · Cotton<br>Wool · Silk · Hemp<br>Sustainable options</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+              <circle cx="16" cy="16" r="10" stroke="#5AADA8" stroke-width="1.5" fill="none"/>
+              <circle cx="16" cy="16" r="5" stroke="#5AADA8" stroke-width="1" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="cat-name">Outdoor & Performance</div>
+          <div class="cat-desc">UV resistant · Waterproof<br>Hawaii climate ready<br>Indoor/outdoor use</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+              <path d="M16 4 L20 12 L28 12 L22 18 L24 26 L16 22 L8 26 L10 18 L4 12 L12 12Z" stroke="#D4614A" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="cat-name">Tropical Prints</div>
+          <div class="cat-desc">Hawaiian motifs<br>Botanical prints<br>Island-inspired patterns</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+              <rect x="6" y="6" width="8" height="20" rx="1" stroke="#2B5278" stroke-width="1.5" fill="none"/>
+              <rect x="18" y="6" width="8" height="20" rx="1" stroke="#2B5278" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="cat-name">Bedding & Linens</div>
+          <div class="cat-desc">Duvet cover fabric<br>Coverlets · Shams<br>Pillow ticking</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+              <path d="M8 28 L8 8 Q16 4 24 8 L24 28" stroke="#C8A96E" stroke-width="1.5" fill="none"/>
+              <path d="M8 16 Q16 12 24 16" stroke="#C8A96E" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="cat-name">Trims & Notions</div>
+          <div class="cat-desc">Fringe · Tape · Cord<br>Tassels · Buttons<br>Hardware</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fabric-cta">
+    <h2 class="serif">Come touch the library.</h2>
+    <p>Fabric cannot be chosen from a screen. Visit our studio at Hub Coworking and run your hands through thousands of possibilities.</p>
+    <span class="btn btn-white" style="color:var(--navy);" onclick="showPage('contact')">Book a Studio Visit</span>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     WALLPAPER PAGE
+══════════════════════════════════ -->
+<div id="wallpaper" class="page pt-nav">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Hale Textile Studio</div>
+      <h1 class="page-h1">Wallpaper</h1>
+      <p class="page-tagline">The most transformative thing you can do to a room. We carry the most beautiful collections in Hawaii.</p>
+    </div>
+  </div>
+
+  <div class="wp-grid">
+    <div class="wp-intro">
+      <div>
+        <div class="section-label" style="color:var(--coral);">The Collection</div>
+        <div class="section-rule" style="background:var(--coral);"></div>
+        <h2 class="serif">Wallpaper changes everything.</h2>
+        <p>A single wall of the right wallpaper transforms a room completely. It is the highest-impact decision you can make in interior design — and the most personal.</p>
+        <p>Our studio has every wallpaper sample on display in context. You can see how it reads in the light. You can feel the texture. You can imagine it in your home.</p>
+        <span class="btn btn-coral" onclick="showPage('contact')" style="margin-top:12px;display:inline-block;">Book a Wallpaper Consultation</span>
+      </div>
+      <div class="wp-accent">
+        <p>"The right wallpaper is not decoration. It is architecture. It defines the entire feeling of a room before a single piece of furniture enters."</p>
+      </div>
+    </div>
+
+    <div class="section-label" style="color:var(--coral);">What We Carry</div>
+    <div class="section-rule" style="background:var(--coral);"></div>
+    <div class="wp-types">
+      <div class="wp-type">
+        <div class="wp-type-name">Grasscloth & Natural</div>
+        <div class="wp-type-desc">Woven natural fibers<br>Jute · Seagrass · Sisal<br>Perfect for Hawaii climate<br>Textural · Tactile · Timeless</div>
+      </div>
+      <div class="wp-type">
+        <div class="wp-type-name">Printed & Patterned</div>
+        <div class="wp-type-desc">Botanical · Geometric<br>Traditional · Contemporary<br>Exclusive designer lines<br>Custom colorways available</div>
+      </div>
+      <div class="wp-type">
+        <div class="wp-type-name">Textured & Embossed</div>
+        <div class="wp-type-desc">Linen · Silk · Faux finish<br>Venetian plaster effect<br>Dimensional surface<br>Luxurious hand feel</div>
+      </div>
+      <div class="wp-type">
+        <div class="wp-type-name">Mural & Scenic</div>
+        <div class="wp-type-desc">Floor-to-ceiling panoramas<br>Custom sizing available<br>Tropical · Botanical<br>Ocean & landscape scenes</div>
+      </div>
+      <div class="wp-type">
+        <div class="wp-type-name">Vinyl & Performance</div>
+        <div class="wp-type-desc">Humidity resistant<br>Cleanable surfaces<br>Commercial grade<br>Hawaii climate optimized</div>
+      </div>
+      <div class="wp-type">
+        <div class="wp-type-name">Fabric-Backed</div>
+        <div class="wp-type-desc">Upholstered wall panels<br>Fabric on walls<br>Acoustic properties<br>Ultimate luxury finish</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     ACCESSORIES PAGE
+══════════════════════════════════ -->
+<div id="accessories" class="page pt-nav">
+
+  <div class="acc-hero-split">
+    <div class="acc-left" style="padding-top:120px;">
+      <div class="page-eyebrow" style="color:rgba(255,255,255,0.6);">Made from the library</div>
+      <h1 class="page-h1" style="color:white;">Custom<br>Accessories</h1>
+      <p class="page-tagline" style="color:rgba(255,255,255,0.75);margin-top:12px;">Every accessory is made from fabric in our library. Choose what speaks to you.</p>
+    </div>
+    <div class="acc-right" style="padding-top:120px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:white;line-height:1.4;margin-bottom:16px;font-style:italic;">"The tote bag that started everything. Upholstery-weight fabric. No hardware. One of twelve."</div>
+      <div style="font-size:11px;letter-spacing:0.42em;text-transform:uppercase;color:var(--seafoam);">The Signature Tote · Drop No. 01</div>
+    </div>
+  </div>
+
+  <div class="acc-products">
+    <div class="section-label" style="color:var(--coral);">The Collection</div>
+    <div class="section-rule" style="background:var(--coral);"></div>
+    <h2 class="serif" style="font-size:36px;color:var(--ocean);margin-bottom:8px;">Made from the library.</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--mid);margin-bottom:8px;">Everything is made from fabric in our library. You choose the fabric — we make it beautiful.</p>
+
+    <div class="acc-grid">
+      <div class="acc-card">
+        <div class="acc-name">The Signature Tote</div>
+        <div class="acc-price">From $125 · Limited seasonal drops</div>
+        <div class="acc-desc">Upholstery-weight fabric<br>Dior book tote silhouette<br>No hardware · Surprise lining<br>Numbered · Named · Collectible</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-name">Custom Throw Pillows</div>
+        <div class="acc-price">From $85 · Made to order</div>
+        <div class="acc-desc">Choose your fabric<br>Custom sizing available<br>Knife edge or flange<br>Zipper or envelope back</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-name">Table Runners</div>
+        <div class="acc-price">From $65 · Made to order</div>
+        <div class="acc-desc">Custom length & width<br>Jacquard · Linen · Tapestry<br>Hemmed or fringed ends<br>Matching napkin sets</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-name">Coverlet & Quilt</div>
+        <div class="acc-price">From $285 · Made to order</div>
+        <div class="acc-desc">King · Queen · Twin<br>Choose face fabric<br>Coordinating shams<br>Heirloom quality</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-name">Duvet Covers</div>
+        <div class="acc-price">From $195 · Made to order</div>
+        <div class="acc-desc">All standard sizes<br>Zip or button closure<br>Matching pillow shams<br>Monogram available</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-name">Furoshiki Gift Bags</div>
+        <div class="acc-price">From $35 · In studio</div>
+        <div class="acc-desc">Japanese wrapping cloth<br>Reusable · Beautiful<br>Any size order<br>Perfect for gifting</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-name">Placemats & Napkins</div>
+        <div class="acc-price">From $45 set · Made to order</div>
+        <div class="acc-desc">Set of 4 or 6<br>Mix &amp; match fabric<br>Hemstitched or bound<br>Monogram available</div>
+      </div>
+      <div class="acc-card">
+        <div class="acc-name">Lavender Sachets</div>
+        <div class="acc-price">From $15 · In studio</div>
+        <div class="acc-desc">Made from library scraps<br>Hawaii lavender filling<br>Perfect gift · Gift sets<br>Custom quantities</div>
+      </div>
+      <div class="acc-card" style="background:var(--coral);">
+        <div class="acc-name" style="color:white;">Custom Order</div>
+        <div class="acc-price" style="color:rgba(255,255,255,0.75);">Price on request</div>
+        <div class="acc-desc" style="color:rgba(255,255,255,0.6);">Don't see what you need?<br>We make almost anything<br>from our fabric library<br>Visit the studio to discuss</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     TRADE PROGRAM PAGE
+══════════════════════════════════ -->
+<div id="trade" class="page pt-nav">
+
+  <div class="trade-hero">
+    <div class="trade-hero-inner">
+      <div class="page-eyebrow" style="color:rgba(90,173,168,0.7);">For Hawaii's Design Community</div>
+      <h1 class="page-h1" style="color:white;">Trade Program</h1>
+      <p class="page-tagline" style="color:rgba(255,255,255,0.65);">Open to every designer in Hawaii. No tiers. No exclusivity. Just resources.</p>
+    </div>
+  </div>
+
+  <div class="trade-philosophy">
+    <div class="trade-philosophy-inner">
+      <div class="section-label" style="color:rgba(255,255,255,0.6);">Our Philosophy</div>
+      <div class="section-rule" style="background:rgba(255,255,255,0.3);margin:10px auto 24px;"></div>
+      <p class="phil-quote">"Hale Textile Studio is a resource for every designer in Hawaii — established or just starting out. Our studio space is available to trade partners for client presentations, sample reviews, and project work. If you source with us, consider this your home base."</p>
+      <div style="font-size:11px;letter-spacing:0.45em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Hale Textile Studio · Trade Program Philosophy</div>
+    </div>
+  </div>
+
+  <div class="trade-benefits">
+    <div class="trade-benefits-inner">
+      <div class="section-label" style="color:var(--coral);">What You Get</div>
+      <div class="section-rule" style="background:var(--coral);"></div>
+      <h2 class="serif" style="font-size:36px;color:var(--ocean);">Your studio. Your home base.</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-title">Studio Space for Client Meetings</div>
+          <div class="benefit-body">Private meeting room · Projector & screen<br>Large layout tables for fabric review<br>Living fabric library as backdrop<br>Custom furniture vignettes in context</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-title">Trade Pricing</div>
+          <div class="benefit-body">Preferred pricing on all fabric orders<br>Wallpaper trade discounts<br>Accessory wholesale pricing<br>Custom order priority</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-title">Sample Loan Program</div>
+          <div class="benefit-body">Take samples to your clients<br>Extended loan periods for projects<br>No deposit required for established trade<br>Return when project is complete</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-title">HTS Team Support</div>
+          <div class="benefit-body">Fabric sourcing assistance<br>Product knowledge &amp; guidance<br>Custom furniture resource access<br>Priority scheduling for busy periods</div>
+        </div>
+        <div class="benefit-card" style="border-left-color:var(--seafoam);">
+          <div class="benefit-title" style="color:var(--seafoam);">For Established Designers</div>
+          <div class="benefit-body">Continuing the Accent Interiors legacy<br>Existing relationships honored<br>Dedicated account management<br>Project history maintained</div>
+        </div>
+        <div class="benefit-card" style="border-left-color:var(--navy);">
+          <div class="benefit-title" style="color:var(--navy);">For Emerging Designers</div>
+          <div class="benefit-body">Open invitation to build your career here<br>No minimum order requirements<br>Mentorship resources available<br>Build your trade account from day one</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--navy);padding:72px 40px;">
+    <div class="trade-apply" style="padding:0;max-width:100%;margin:0 auto;">
+      <div>
+        <div class="section-label" style="color:rgba(90,173,168,0.7);">Get Started</div>
+        <div class="section-rule" style="background:var(--seafoam);"></div>
+        <h2 class="serif" style="font-size:40px;color:white;margin-bottom:16px;">Apply for<br>trade access.</h2>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.9;margin-bottom:28px;">Visit the studio or reach out by email. We approve all legitimate design professionals — no gatekeeping, no waiting lists.</p>
+        <span class="btn" style="background:var(--coral);color:white;" onclick="showPage('contact')">Contact Us to Apply</span>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:36px;">
+        <div style="font-size:11px;letter-spacing:0.42em;text-transform:uppercase;color:var(--seafoam);margin-bottom:20px;">What to Bring</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;font-style:italic;padding-left:16px;border-left:1px solid rgba(90,173,168,0.3);">Your business card or design credentials</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;font-style:italic;padding-left:16px;border-left:1px solid rgba(90,173,168,0.3);">Your resale certificate (if you have one)</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;font-style:italic;padding-left:16px;border-left:1px solid rgba(90,173,168,0.3);">A project you're currently working on</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;font-style:italic;padding-left:16px;border-left:1px solid rgba(90,173,168,0.3);">Curiosity. That is the only real requirement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     ABOUT PAGE
+══════════════════════════════════ -->
+<div id="about" class="page pt-nav">
+
+  <div class="about-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Our Story</div>
+      <h1 class="page-h1">About Hale<br>Textile Studio</h1>
+      <p class="page-tagline">Born in Hawaii. Built for the art of living well at home.</p>
+    </div>
+  </div>
+
+  <div class="about-story">
+    <div>
+      <div class="section-label" style="color:var(--coral);">The Story</div>
+      <div class="section-rule" style="background:var(--coral);"></div>
+      <h2 class="serif">A fabric library<br>for Hawaii.</h2>
+      <p>Hale Textile Studio was built on a simple belief — that the people of Hawaii deserve a home fabric library that reflects where they live. Not a catalog of generic choices imported from the mainland. A curated, tactile, deeply local resource.</p>
+      <p>The word Hale means home in Hawaiian. Everything we do is grounded in that idea — your home, your creative space, your relationship to the place you live.</p>
+      <p>Our studio at Hub Coworking in Honolulu is a fully realized living showroom where nothing is decorative for decoration's sake. Every surface showcases fabric that is available. Every piece of furniture is upholstered in something you can order.</p>
+      <p>Come in. Touch everything. That is the whole point.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="background:var(--coral);padding:36px 32px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:white;line-height:1.5;font-style:italic;margin-bottom:12px;">"Not fast fashion for the home. The opposite — timeless, tactile, deeply personal, and unmistakably Hawaii."</div>
+        <div style="font-size:11px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(255,255,255,0.55);">Brand North Star</div>
+      </div>
+      <div style="background:var(--sand);padding:32px 28px;border:1px solid #D4C8B4;">
+        <div class="section-label" style="color:var(--coral);margin-bottom:12px;">The Space</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--mid);line-height:1.9;">Hub Coworking<br>1050 Queen Street · Suite 100<br>Honolulu, Hawaii 96814</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-values">
+    <div class="about-values-inner">
+      <div class="section-label" style="color:rgba(90,173,168,0.7);">What We Believe</div>
+      <div class="section-rule" style="background:var(--seafoam);"></div>
+      <h2 class="serif" style="font-size:36px;color:white;margin-bottom:8px;text-align:center;">Classic over trendy.<br><em style="color:rgba(255,255,255,0.5);">Grounded over aspirational.</em></h2>
+      <div class="values-grid" style="margin-top:40px;">
+        <div class="value-card">
+          <div class="value-title">Fabric is tactile</div>
+          <div class="value-body">You cannot choose fabric from a screen. The weight, the drape, the hand — these things can only be experienced in person. That is why we exist.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-title">Classic over trendy</div>
+          <div class="value-body">We curate for longevity, not the season. The fabrics we carry are the ones that will still be beautiful in twenty years — and more beautiful for the time.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-title">Open to everyone</div>
+          <div class="value-body">Designers and homeowners. Experienced and first-time. Everyone who walks through our door deserves the same quality of service and access.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-title">Unmistakably Hawaii</div>
+          <div class="value-body">The colors of the ocean, the mountain, the rainforest, the reef. Our curation reflects where we are — not a mainland idea of what Hawaii should look like.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-title">The living showroom</div>
+          <div class="value-body">Nothing in our studio is decorative for decoration's sake. Every surface, every upholstered piece, every drapery panel is available to you. It is all real.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-title">Quality over quantity</div>
+          <div class="value-body">We carry fewer things and know them deeply. Every fabric in our library has been chosen by hand, for a reason. We can tell you what it is.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     CONTACT PAGE
+══════════════════════════════════ -->
+<div id="contact" class="page pt-nav">
+
+  <div class="contact-split">
+    <div class="contact-left">
+      <div class="section-label" style="color:rgba(255,255,255,0.6);">Come Visit</div>
+      <div class="section-rule" style="background:rgba(255,255,255,0.3);"></div>
+      <h2 class="contact-h serif">Let's talk<br>fabric.</h2>
+      <p class="contact-body">Studio visits are by appointment only. Book your 30-minute visit below, or scroll down to sign up for our newsletter and receive a booking link instantly.</p>
+      <div style="margin:20px 0;">
+        <a href="https://calendly.com/haletextilestudio/30min" target="_blank" rel="noopener" style="display:inline-block;background:#FFFFFF;color:#D4614A;font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:0.42em;text-transform:uppercase;padding:13px 24px;text-decoration:none;">Book a Studio Visit</a>
+      </div>
+
+      <div class="contact-detail">
+        <div>
+          <div class="cd-label">Studio Address</div>
+          <div class="cd-val">1050 Queen Street · Suite 100<br>Honolulu, Hawaii 96814</div>
+        </div>
+        <div>
+          <div class="cd-label">Located At</div>
+          <div class="cd-val">Hub Coworking · Honolulu</div>
+        </div>
+        <div>
+          <div class="cd-label">Email</div>
+          <div class="cd-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3a725b565f6e5f424e53565f694e4f5e53557a5d575b535614595557">[email&#160;protected]</a></div>
+        </div>
+        <div>
+          <div class="cd-label">Instagram</div>
+          <div class="cd-val"><a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener" style="color:white;text-decoration:none;display:inline-flex;align-items:center;gap:8px;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.8" fill="none"/><circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8" fill="none"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>@haletextilestudio</a></div>
+        </div>
+        <div>
+          <div class="cd-label">Website</div>
+          <div class="cd-val">haletextilestudio.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <div class="section-label" style="color:var(--coral);margin-top:0;">Send a Message</div>
+      <div class="section-rule" style="background:var(--coral);"></div>
+      <h2 class="serif" style="font-size:32px;color:var(--ocean);margin-bottom:28px;">How can we help?</h2>
+
+      <!-- Netlify Forms — captures submissions and emails to HaleTextileStudio@gmail.com -->
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+        onsubmit="handleContact(event)"
+        style="display:contents;">
+
+        <!-- Netlify honeypot bot protection -->
+        <div style="display:none;">
+          <input name="bot-field">
+        </div>
+        <input type="hidden" name="form-name" value="contact">
+
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" name="name" id="c-name" class="form-input" placeholder="First and last name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" name="email" id="c-email" class="form-input" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">I Am A</label>
+          <select name="i-am-a" id="c-iama" class="form-select">
+            <option value="">Select one</option>
+            <option>Interior Designer</option>
+            <option>Homeowner</option>
+            <option>Architect</option>
+            <option>Stager / Realtor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">What Brings You Here</label>
+          <select name="inquiry-type" id="c-inquiry" class="form-select">
+            <option value="">Select one</option>
+            <option>Fabric for a project</option>
+            <option>Wallpaper</option>
+            <option>Custom accessories</option>
+            <option>Trade program</option>
+            <option>Studio visit</option>
+            <option>Just curious</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea name="message" id="c-message" class="form-textarea" placeholder="Tell us about your project or what you're looking for..."></textarea>
+        </div>
+
+        <!-- Success message — hidden until submit -->
+        <div id="contact-success" style="display:none;padding:28px 32px;background:rgba(90,173,168,0.08);border:1px solid rgba(90,173,168,0.25);margin-bottom:16px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--ocean);margin-bottom:10px;">Mahalo. ✦</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--mid);line-height:1.8;margin-bottom:8px;">Your message has been received by the Hale Textile Studio team.</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--mid);line-height:1.8;">We will get back to you within 1–2 business days. In the meantime, come visit us at Hub Coworking or follow along on Instagram at <a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener" style="color:var(--coral);text-decoration:none;">@haletextilestudio</a>.</div>
+        </div>
+
+        <button type="button" id="contact-btn" onclick="submitContact()"
+          class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<!-- ══════════ EMAIL SIGNUP ══════════ -->
+<section id="signup" style="background:var(--navy);padding:80px 40px;position:relative;overflow:hidden;">
+
+  <!-- Decorative background symbol -->
+  <svg style="position:absolute;opacity:0.05;right:-60px;top:50%;transform:translateY(-50%);" viewBox="0 0 300 300" width="300" height="300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M150 150 C120 120 80 60 30 30 C80 80 130 130 150 150Z" fill="#5AADA8"/>
+    <path d="M150 150 C180 120 220 60 270 30 C220 80 170 130 150 150Z" fill="#5AADA8"/>
+    <path d="M150 150 C180 180 220 240 270 270 C220 220 170 170 150 150Z" fill="#5AADA8"/>
+    <path d="M150 150 C120 180 80 240 30 270 C80 220 130 170 150 150Z" fill="#5AADA8"/>
+  </svg>
+
+  <div style="max-width:680px;margin:0 auto;text-align:center;position:relative;">
+
+    <!-- Symbol -->
+    <svg viewBox="0 0 40 40" width="32" height="32" fill="none" style="display:block;margin:0 auto 20px;">
+      <path d="M20 20 C16 16 10 8 4 4 C10 10 16 16 20 20Z" fill="#5AADA8"/>
+      <path d="M20 20 C24 16 30 8 36 4 C30 10 24 16 20 20Z" fill="#D4614A"/>
+      <path d="M20 20 C24 24 30 32 36 36 C30 30 24 24 20 20Z" fill="#5AADA8"/>
+      <path d="M20 20 C16 24 10 32 4 36 C10 30 16 24 20 20Z" fill="#D4614A"/>
+      <circle cx="20" cy="20" r="3.5" fill="var(--navy, #2B5278)"/>
+    </svg>
+
+    <!-- Label -->
+    <div style="font-size:11px;letter-spacing:0.55em;text-transform:uppercase;color:rgba(90,173,168,0.7);margin-bottom:12px;">Stay in the Loop</div>
+
+    <!-- Heading -->
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:300;color:#FFFFFF;line-height:1.15;margin-bottom:14px;">
+      Be first to know.<br><em style="color:rgba(255,255,255,0.6);font-style:italic;">From the library.</em>
+    </h2>
+
+    <!-- Rule -->
+    <div style="width:28px;height:1px;background:rgba(90,173,168,0.5);margin:0 auto 18px;"></div>
+
+    <!-- Body -->
+    <p style="font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:36px;">
+      Sign up to receive exclusive previews of the fabric library, seasonal drop announcements, new arrivals, and studio events. No noise — only things worth knowing.
+    </p>
+
+    <!-- HTS Signup Form — JSONP to Mailchimp, Mahalo on success -->
+    <div id="hts-form-wrap" style="max-width:480px;margin:0 auto;">
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px;">
+        <div>
+          <label style="display:block;font-size:10px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:7px;">First Name</label>
+          <input type="text" id="mce-FNAME" placeholder="First name"
+            style="width:100%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:13px 14px;font-family:'Josefin Sans',sans-serif;font-size:15px;color:#FFFFFF;outline:none;transition:border-color 0.2s;"
+            onfocus="this.style.borderColor='#5AADA8'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'">
+        </div>
+        <div>
+          <label style="display:block;font-size:10px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:7px;">Last Name</label>
+          <input type="text" id="mce-LNAME" placeholder="Last name"
+            style="width:100%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:13px 14px;font-family:'Josefin Sans',sans-serif;font-size:15px;color:#FFFFFF;outline:none;transition:border-color 0.2s;"
+            onfocus="this.style.borderColor='#5AADA8'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'">
+        </div>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:10px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:7px;">Email Address *</label>
+        <input type="email" id="mce-EMAIL" placeholder="your@email.com"
+          style="width:100%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:13px 14px;font-family:'Josefin Sans',sans-serif;font-size:15px;color:#FFFFFF;outline:none;transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='#5AADA8'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'">
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:10px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:7px;">I Am A <em style="font-style:italic;text-transform:lowercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);"> (optional)</em></label>
+        <select id="mce-I_AM_A"
+          style="width:100%;background:#2B5278;border:1px solid rgba(255,255,255,0.2);padding:13px 14px;font-family:'Josefin Sans',sans-serif;font-size:14px;color:rgba(255,255,255,0.9);outline:none;cursor:pointer;appearance:none;"
+          onfocus="this.style.borderColor='#5AADA8'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'">
+          <option value="">Select one</option>
+          <option value="Interior Designer">Interior Designer</option>
+          <option value="Homeowner">Homeowner</option>
+          <option value="Architect">Architect</option>
+          <option value="Stager / Realtor">Stager / Realtor</option>
+          <option value="Trade Professional">Trade Professional</option>
+          <option value="Curious &amp; Excited">Curious &amp; Excited</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <label style="display:block;font-size:10px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:7px;">Company / Studio <em style="font-style:italic;text-transform:lowercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);"> (optional)</em></label>
+        <input type="text" id="mce-COMPANY" placeholder="Your company or studio name"
+          style="width:100%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:13px 14px;font-family:'Josefin Sans',sans-serif;font-size:15px;color:#FFFFFF;outline:none;transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='#5AADA8'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'">
+      </div>
+
+      <div id="hts-msg" style="display:none;padding:11px 14px;margin-bottom:12px;font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#F8F4EC;text-align:left;"></div>
+
+      <button id="hts-btn" onclick="htsSubmit()"
+        style="background:#D4614A;color:#FFFFFF;border:none;cursor:pointer;font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:0.45em;text-transform:uppercase;padding:16px 32px;width:100%;transition:background 0.2s;"
+        onmouseover="this.style.background='#B84D38'" onmouseout="this.style.background='#D4614A'">Count Me In</button>
+    </div>
+
+    <!-- Mahalo — shown after successful submit -->
+    <div id="hts-mahalo" style="display:none;max-width:480px;margin:0 auto;padding:36px 32px;background:rgba(90,173,168,0.1);border:1px solid rgba(90,173,168,0.3);">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:#FFFFFF;margin-bottom:10px;letter-spacing:0.08em;">Mahalo. ✦</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:rgba(255,255,255,0.85);line-height:1.8;margin-bottom:10px;">Thank you for joining the Hale Textile Studio community.</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.55);line-height:1.8;">We will be in touch with new arrivals, seasonal drops, studio events, and everything happening at Hawaii's home fabric library.</div>
+    </div>
+
+    <!-- Fine print -->
+    <p style="margin-top:20px;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.22);">No spam. Unsubscribe anytime. Your information stays with us.</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-mark">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+          <path d="M12 12 C10 10 6 6 2 2 C6 6 10 10 12 12Z" fill="#5AADA8"/>
+          <path d="M12 12 C14 10 18 6 22 2 C18 6 14 10 12 12Z" fill="#2B5278"/>
+          <path d="M12 12 C14 14 18 18 22 22 C18 18 14 14 12 12Z" fill="#5AADA8"/>
+          <path d="M12 12 C10 14 6 18 2 22 C6 18 10 14 12 12Z" fill="#2B5278"/>
+          <circle cx="12" cy="12" r="2.2" fill="#D4614A"/>
+        </svg>
+        <div class="footer-name">
+          Hale Textile Studio
+          <span>Honolulu, Hawaii</span>
+        </div>
+      </div>
+      <div class="footer-tagline">Your creative space for the home.</div>
+      <div class="footer-desc">Hawaii's Home Fabric Library<br>Wallpaper · Custom Home Accessories<br>Hub Coworking · 1050 Queen St · Honolulu</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Pages</div>
+      <ul class="footer-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('fabric')">Fabric Library</a></li>
+        <li><a onclick="showPage('wallpaper')">Wallpaper</a></li>
+        <li><a onclick="showPage('accessories')">Accessories</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Studio</div>
+      <ul class="footer-links">
+        <li><a onclick="showPage('trade')">Trade Program</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+        <li><a onclick="showPage('contact')">Book a Visit</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="rgba(90,173,168,0.7)" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4.5" stroke="rgba(90,173,168,0.7)" stroke-width="2" fill="none"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(90,173,168,0.7)"/></svg>@haletextilestudio</a></li>
+        <li><a>haletextilestudio.com</a></li>
+                <li><a><span class="__cf_email__" data-cfemail="e6ae878a83b2839e928f8a83b59293828f89a6818b878f8ac885898b">[email&#160;protected]</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Hale Textile Studio LLC · EIN 41-4914864 · Honolulu, Hawaii</div>
+    <div class="footer-ig"><a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener"
+  style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--seafoam);"
+  onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="20" height="20" rx="5" stroke="#5AADA8" stroke-width="1.8" fill="none"/>
+    <circle cx="12" cy="12" r="4.5" stroke="#5AADA8" stroke-width="1.8" fill="none"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="#5AADA8"/>
+  </svg>
+  <a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener" style="font-size:10px;letter-spacing:0.32em;text-transform:uppercase;font-family:'Josefin Sans',sans-serif;color:var(--seafoam);text-decoration:none;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">@haletextilestudio</a>
+</a></div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  const nl = document.getElementById('navLinks');
+  if (nl) nl.classList.remove('open');
+}
+
+function htsSubmit() {
+  var email   = (document.getElementById('mce-EMAIL').value || '').trim();
+  var fname   = (document.getElementById('mce-FNAME').value || '').trim();
+  var lname   = (document.getElementById('mce-LNAME').value || '').trim();
+  var iama    = (document.getElementById('mce-I_AM_A').value || '');
+  var company = (document.getElementById('mce-COMPANY').value || '').trim();
+  var msg     = document.getElementById('hts-msg');
+
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Please enter a valid email address.';
+    msg.style.background = 'rgba(212,97,74,0.2)';
+    msg.style.display = 'block';
+    return;
+  }
+  msg.style.display = 'none';
+
+  var btn = document.getElementById('hts-btn');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  fetch('/.netlify/functions/newsletter', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, fname: fname, lname: lname, iama: iama, company: company })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(res) {
+    btn.textContent = 'Count Me In';
+    btn.disabled = false;
+    document.getElementById('hts-form-wrap').style.display = 'none';
+    document.getElementById('hts-mahalo').style.display = 'block';
+  })
+  .catch(function() {
+    btn.textContent = 'Count Me In';
+    btn.disabled = false;
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.background = 'rgba(212,97,74,0.2)';
+    msg.style.display = 'block';
+  });
+}
+
+function submitContact() {
+  var name    = (document.getElementById('c-name').value || '').trim();
+  var email   = (document.getElementById('c-email').value || '').trim();
+  var iama    = (document.getElementById('c-iama').value || '');
+  var inquiry = (document.getElementById('c-inquiry').value || '');
+  var message = (document.getElementById('c-message').value || '').trim();
+  var btn     = document.getElementById('contact-btn');
+
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  // Split name into first/last
+  var parts = name.split(' ');
+  var fname = parts[0] || '';
+  var lname = parts.slice(1).join(' ') || '';
+
+  // Build message note combining inquiry type + message
+  var fullMessage = inquiry ? '[' + inquiry + '] ' + message : message;
+
+  // JSONP to Mailchimp — tags via MERGE are not supported in JSONP
+  // We send all data as merge fields; Contact Inquiry tag added via Mailchimp automation
+  fetch('/.netlify/functions/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, fname: fname, lname: lname, iama: iama, message: fullMessage })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(res) {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    document.getElementById('contact-success').style.display = 'block';
+    document.getElementById('contact-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    document.getElementById('c-name').value = '';
+    document.getElementById('c-email').value = '';
+    document.getElementById('c-iama').value = '';
+    document.getElementById('c-inquiry').value = '';
+    document.getElementById('c-message').value = '';
+  })
+  .catch(function() {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    document.getElementById('contact-success').style.display = 'block';
+    document.getElementById('contact-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 3000);
+}
+
+// Keyboard nav
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const nl = document.getElementById('navLinks');
+    if (nl) nl.classList.remove('open');
+  }
+});
+</script>
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">
+(function($) {
+  window.fnames = new Array();
+  windwindow.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='I_AM_A';ftypes[6]='text';fnames[7]='COMPANY';ftypes[7]='text';fnames[8]='MESSAGE';ftypes[8]='text';fnames[9]='MMERGE9';ftypes[9]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+</script>
+</body>
+</html>

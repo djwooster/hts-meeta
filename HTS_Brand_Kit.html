@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hale Textile Studio — Brand Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral:   #D4614A;
+    --navy:    #2B5278;
+    --seafoam: #5AADA8;
+    --ocean:   #0A2A3A;
+    --shell:   #F8F4EC;
+    --sand:    #EDE0CC;
+    --gold:    #C8A96E;
+    --white:   #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--shell);
+    color: var(--ocean);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--ocean);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 70%, rgba(90,173,168,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(212,97,74,0.10) 0%, transparent 60%);
+  }
+  .cover-logo { position: relative; z-index: 1; margin-bottom: 48px; }
+  .cover-title {
+    position: relative; z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(42px, 7vw, 72px);
+    color: var(--shell);
+    letter-spacing: 0.08em;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .cover-sub {
+    position: relative; z-index: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--seafoam);
+    text-transform: uppercase;
+    margin-top: 16px;
+    text-align: center;
+  }
+  .cover-rule {
+    position: relative; z-index: 1;
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 32px auto;
+  }
+  .cover-label {
+    position: relative; z-index: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: rgba(248,244,236,0.35);
+    text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 80px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section + .section { border-top: 1px solid var(--sand); }
+  .section-full {
+    padding: 80px 60px;
+    background: var(--white);
+  }
+  .section-full .inner { max-width: 1100px; margin: 0 auto; }
+  .section-dark {
+    padding: 80px 60px;
+    background: var(--ocean);
+  }
+  .section-dark .inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 200;
+    font-size: 9px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 12px;
+  }
+  .section-dark .section-label { color: var(--seafoam); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--ocean);
+    line-height: 1.15;
+    margin-bottom: 48px;
+  }
+  .section-dark .section-title { color: var(--shell); }
+
+  /* ── LOGO SECTION ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .logo-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 32px 40px;
+    gap: 24px;
+  }
+  .logo-tile-label {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    font-weight: 200;
+    opacity: 0.5;
+  }
+  .tile-shell { background: var(--shell); }
+  .tile-white { background: var(--white); }
+  .tile-ocean { background: var(--ocean); }
+  .tile-ocean .logo-tile-label { color: var(--shell); }
+  .tile-coral { background: var(--coral); }
+  .tile-coral .logo-tile-label { color: rgba(255,255,255,0.6); }
+  .tile-navy { background: var(--navy); }
+  .tile-navy .logo-tile-label { color: rgba(255,255,255,0.6); }
+
+  /* ── LOGO NAME LOCKUP ── */
+  .lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+  .lockup-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.25em;
+    color: var(--ocean);
+    text-transform: uppercase;
+  }
+  .lockup-name.light { color: var(--shell); }
+  .lockup-name.coral-text { color: var(--coral); }
+  .lockup-rule { width: 40px; height: 1px; background: var(--gold); }
+  .lockup-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    font-size: 7.5px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--ocean);
+    opacity: 0.55;
+  }
+  .lockup-sub.light { color: var(--shell); opacity: 0.5; }
+
+  /* ── SYMBOL ANATOMY ── */
+  .anatomy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .anatomy-details { display: flex; flex-direction: column; gap: 20px; }
+  .anatomy-item {}
+  .anatomy-item h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 6px;
+  }
+  .anatomy-item p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--ocean);
+    opacity: 0.8;
+  }
+
+  /* ── COLOR SECTION ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .color-swatch {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .color-swatch.primary { grid-column: span 2; aspect-ratio: auto; min-height: 200px; }
+  .swatch-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 200;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 4px;
+  }
+  .swatch-hex {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.6);
+  }
+  .swatch-dark .swatch-name,
+  .swatch-dark .swatch-hex { color: rgba(10,42,58,0.6); }
+
+  /* ── TYPOGRAPHY ── */
+  .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  .type-specimen {}
+  .type-family {
+    font-size: 9px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: var(--coral);
+    margin-bottom: 16px;
+  }
+  .type-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--ocean);
+    margin-bottom: 20px;
+  }
+  .type-weights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--sand);
+  }
+  .type-weight-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .type-weight-sample {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--ocean);
+  }
+  .type-weight-label {
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 200;
+    opacity: 0.4;
+  }
+  .type-display-josefin {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    font-size: 42px;
+    letter-spacing: 0.15em;
+    line-height: 1.1;
+    color: var(--ocean);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .josefin-weights .type-weight-sample {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  /* ── USAGE SECTION ── */
+  .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .usage-card {
+    padding: 36px;
+    border: 1px solid var(--sand);
+  }
+  .usage-card h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .usage-card.do h3 { color: var(--seafoam); }
+  .usage-card.dont h3 { color: var(--coral); }
+  .usage-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .usage-card li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ocean);
+    padding-left: 16px;
+    position: relative;
+    opacity: 0.85;
+  }
+  .usage-card.do li::before { content: '✦'; position: absolute; left: 0; color: var(--seafoam); font-size: 8px; top: 5px; }
+  .usage-card.dont li::before { content: '✕'; position: absolute; left: 0; color: var(--coral); font-size: 8px; top: 5px; }
+
+  /* ── TAGLINE ── */
+  .tagline-block {
+    background: var(--coral);
+    padding: 64px 60px;
+    text-align: center;
+  }
+  .tagline-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(28px, 5vw, 52px);
+    color: var(--shell);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+  }
+  .tagline-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: rgba(248,244,236,0.5);
+    margin-top: 20px;
+  }
+
+  /* ── CONTACT FOOTER ── */
+  .footer {
+    background: var(--ocean);
+    padding: 48px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-detail {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: rgba(248,244,236,0.35);
+  }
+
+  @media (max-width: 700px) {
+    .section, .section-full, .section-dark { padding: 56px 28px; }
+    .logo-grid { grid-template-columns: 1fr 1fr; }
+    .color-grid { grid-template-columns: repeat(4, 1fr); }
+    .type-grid, .anatomy-grid, .usage-grid { grid-template-columns: 1fr; gap: 40px; }
+    .color-swatch.primary { grid-column: span 2; }
+    .footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-logo">
+    <!-- X-STAR PETAL LOGO — 160px, coral background circle -->
+    <svg viewBox="0 0 160 160" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="80" cy="80" r="80" fill="#0A2A3A"/>
+      <!-- NW petal — seafoam -->
+      <path d="M80 80 L14 14 C24 44 50 66 80 80Z" fill="#5AADA8"/>
+      <path d="M80 80 L14 14 C44 24 66 50 80 80Z" fill="#5AADA8" opacity="0.5"/>
+      <!-- NE petal — navy -->
+      <path d="M80 80 L146 14 C136 44 110 66 80 80Z" fill="#2B5278"/>
+      <path d="M80 80 L146 14 C116 24 94 50 80 80Z" fill="#2B5278" opacity="0.5"/>
+      <!-- SE petal — seafoam -->
+      <path d="M80 80 L146 146 C136 116 110 94 80 80Z" fill="#5AADA8"/>
+      <path d="M80 80 L146 146 C116 136 94 110 80 80Z" fill="#5AADA8" opacity="0.5"/>
+      <!-- SW petal — navy -->
+      <path d="M80 80 L14 146 C24 116 50 94 80 80Z" fill="#2B5278"/>
+      <path d="M80 80 L14 146 C44 136 66 110 80 80Z" fill="#2B5278" opacity="0.5"/>
+      <!-- Center jewel -->
+      <circle cx="80" cy="80" r="18" fill="#D4614A"/>
+      <circle cx="80" cy="80" r="9" fill="#0A2A3A"/>
+      <circle cx="80" cy="80" r="4" fill="#5AADA8" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="cover-title">Hale Textile Studio</div>
+  <div class="cover-sub">Hawaii's Home Fabric Library</div>
+  <div class="cover-rule"></div>
+  <div class="cover-label">Brand Identity Kit · 2026</div>
+</div>
+
+<!-- ══ LOGO MARK ══════════════════════════════════════ -->
+<div class="section-full">
+  <div class="inner">
+    <div class="section-label">01 — The Symbol</div>
+    <div class="section-title">The X-Star</div>
+
+    <!-- Large centered logo -->
+    <div style="display:flex; justify-content:center; margin-bottom: 64px;">
+      <svg viewBox="0 0 300 300" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- NW petal — seafoam -->
+        <path d="M150 150 L18 18 C38 88 90 128 150 150Z" fill="#5AADA8"/>
+        <path d="M150 150 L18 18 C88 38 128 90 150 150Z" fill="#5AADA8" opacity="0.5"/>
+        <!-- NE petal — navy -->
+        <path d="M150 150 L282 18 C262 88 210 128 150 150Z" fill="#2B5278"/>
+        <path d="M150 150 L282 18 C212 38 172 90 150 150Z" fill="#2B5278" opacity="0.5"/>
+        <!-- SE petal — seafoam -->
+        <path d="M150 150 L282 282 C262 212 210 172 150 150Z" fill="#5AADA8"/>
+        <path d="M150 150 L282 282 C212 262 172 210 150 150Z" fill="#5AADA8" opacity="0.5"/>
+        <!-- SW petal — navy -->
+        <path d="M150 150 L18 282 C38 212 90 172 150 150Z" fill="#2B5278"/>
+        <path d="M150 150 L18 282 C88 262 128 210 150 150Z" fill="#2B5278" opacity="0.5"/>
+        <!-- Center jewel -->
+        <circle cx="150" cy="150" r="34" fill="#D4614A"/>
+        <circle cx="150" cy="150" r="17" fill="#0A2A3A"/>
+        <circle cx="150" cy="150" r="7" fill="#5AADA8" opacity="0.7"/>
+      </svg>
+    </div>
+
+    <!-- Anatomy -->
+    <div class="anatomy-grid">
+      <div>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:17px; line-height:1.8; font-weight:300; color:var(--ocean); opacity:0.75;">
+          The X-Star is composed of four fat diamond petals radiating from a central jewel. Each pair of opposing petals shares a color — seafoam on the NW/SE axis, navy on the NE/SW axis — creating a woven, textile-like visual rhythm. The coral center anchors the mark.
+        </p>
+      </div>
+      <div class="anatomy-details">
+        <div class="anatomy-item">
+          <h4>NW · SE Petals</h4>
+          <p>Seafoam — #5AADA8<br>Evokes water, horizon, Hawaiian sea</p>
+        </div>
+        <div class="anatomy-item">
+          <h4>NE · SW Petals</h4>
+          <p>Navy — #2B5278<br>Depth, craft, trade authority</p>
+        </div>
+        <div class="anatomy-item">
+          <h4>Center Jewel</h4>
+          <p>Coral — #D4614A<br>The heart. Warmth, life, creative energy</p>
+        </div>
+        <div class="anatomy-item">
+          <h4>Petal Construction</h4>
+          <p>Each petal is built from two paths — a solid and a 50% opacity overlay — creating the layered, woven depth that references textile weaving</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LOGO ON BACKGROUNDS ══════════════════════════════ -->
+<div style="background:var(--shell);">
+  <div style="max-width:1100px; margin:0 auto; padding: 80px 60px;">
+    <div class="section-label">02 — Logo Variations</div>
+    <div class="section-title">Symbol on Backgrounds</div>
+    <div class="logo-grid">
+
+      <!-- On shell -->
+      <div class="logo-tile tile-shell">
+        <svg viewBox="0 0 100 100" width="90" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 50 L5 5 C13 29 30 43 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L5 5 C29 13 43 30 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L95 5 C87 29 70 43 50 50Z" fill="#2B5278"/>
+          <path d="M50 50 L95 5 C71 13 57 30 50 50Z" fill="#2B5278" opacity="0.5"/>
+          <path d="M50 50 L95 95 C87 71 70 57 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L95 95 C71 87 57 70 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L5 95 C13 71 30 57 50 50Z" fill="#2B5278"/>
+          <path d="M50 50 L5 95 C29 87 43 70 50 50Z" fill="#2B5278" opacity="0.5"/>
+          <circle cx="50" cy="50" r="11" fill="#D4614A"/>
+          <circle cx="50" cy="50" r="5.5" fill="#0A2A3A"/>
+          <circle cx="50" cy="50" r="2.5" fill="#5AADA8" opacity="0.7"/>
+        </svg>
+        <div class="lockup">
+          <div class="lockup-name" style="font-size:13px;">Hale Textile Studio</div>
+          <div class="lockup-rule"></div>
+          <div class="lockup-sub">Hawaii's Home Fabric Library</div>
+        </div>
+        <span class="logo-tile-label">Shell / Primary</span>
+      </div>
+
+      <!-- On white -->
+      <div class="logo-tile tile-white">
+        <svg viewBox="0 0 100 100" width="90" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 50 L5 5 C13 29 30 43 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L5 5 C29 13 43 30 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L95 5 C87 29 70 43 50 50Z" fill="#2B5278"/>
+          <path d="M50 50 L95 5 C71 13 57 30 50 50Z" fill="#2B5278" opacity="0.5"/>
+          <path d="M50 50 L95 95 C87 71 70 57 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L95 95 C71 87 57 70 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L5 95 C13 71 30 57 50 50Z" fill="#2B5278"/>
+          <path d="M50 50 L5 95 C29 87 43 70 50 50Z" fill="#2B5278" opacity="0.5"/>
+          <circle cx="50" cy="50" r="11" fill="#D4614A"/>
+          <circle cx="50" cy="50" r="5.5" fill="#0A2A3A"/>
+          <circle cx="50" cy="50" r="2.5" fill="#5AADA8" opacity="0.7"/>
+        </svg>
+        <div class="lockup">
+          <div class="lockup-name" style="font-size:13px;">Hale Textile Studio</div>
+          <div class="lockup-rule"></div>
+          <div class="lockup-sub">Hawaii's Home Fabric Library</div>
+        </div>
+        <span class="logo-tile-label">White</span>
+      </div>
+
+      <!-- On ocean -->
+      <div class="logo-tile tile-ocean">
+        <svg viewBox="0 0 100 100" width="90" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 50 L5 5 C13 29 30 43 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L5 5 C29 13 43 30 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L95 5 C87 29 70 43 50 50Z" fill="#2B5278"/>
+          <path d="M50 50 L95 5 C71 13 57 30 50 50Z" fill="#2B5278" opacity="0.5"/>
+          <path d="M50 50 L95 95 C87 71 70 57 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L95 95 C71 87 57 70 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L5 95 C13 71 30 57 50 50Z" fill="#2B5278"/>
+          <path d="M50 50 L5 95 C29 87 43 70 50 50Z" fill="#2B5278" opacity="0.5"/>
+          <circle cx="50" cy="50" r="11" fill="#D4614A"/>
+          <circle cx="50" cy="50" r="5.5" fill="#0A2A3A"/>
+          <circle cx="50" cy="50" r="2.5" fill="#5AADA8" opacity="0.7"/>
+        </svg>
+        <div class="lockup">
+          <div class="lockup-name light" style="font-size:13px;">Hale Textile Studio</div>
+          <div class="lockup-rule"></div>
+          <div class="lockup-sub light">Hawaii's Home Fabric Library</div>
+        </div>
+        <span class="logo-tile-label">Ocean / Dark</span>
+      </div>
+
+      <!-- On coral -->
+      <div class="logo-tile tile-coral">
+        <svg viewBox="0 0 100 100" width="90" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 50 L5 5 C13 29 30 43 50 50Z" fill="#F8F4EC"/>
+          <path d="M50 50 L5 5 C29 13 43 30 50 50Z" fill="#F8F4EC" opacity="0.5"/>
+          <path d="M50 50 L95 5 C87 29 70 43 50 50Z" fill="#0A2A3A"/>
+          <path d="M50 50 L95 5 C71 13 57 30 50 50Z" fill="#0A2A3A" opacity="0.5"/>
+          <path d="M50 50 L95 95 C87 71 70 57 50 50Z" fill="#F8F4EC"/>
+          <path d="M50 50 L95 95 C71 87 57 70 50 50Z" fill="#F8F4EC" opacity="0.5"/>
+          <path d="M50 50 L5 95 C13 71 30 57 50 50Z" fill="#0A2A3A"/>
+          <path d="M50 50 L5 95 C29 87 43 70 50 50Z" fill="#0A2A3A" opacity="0.5"/>
+          <circle cx="50" cy="50" r="11" fill="#F8F4EC"/>
+          <circle cx="50" cy="50" r="5.5" fill="#D4614A"/>
+          <circle cx="50" cy="50" r="2.5" fill="#0A2A3A" opacity="0.5"/>
+        </svg>
+        <div class="lockup">
+          <div class="lockup-name light" style="font-size:13px;">Hale Textile Studio</div>
+          <div class="lockup-rule"></div>
+          <div class="lockup-sub light">Hawaii's Home Fabric Library</div>
+        </div>
+        <span class="logo-tile-label">Coral</span>
+      </div>
+
+      <!-- On navy -->
+      <div class="logo-tile tile-navy">
+        <svg viewBox="0 0 100 100" width="90" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 50 L5 5 C13 29 30 43 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L5 5 C29 13 43 30 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L95 5 C87 29 70 43 50 50Z" fill="#F8F4EC"/>
+          <path d="M50 50 L95 5 C71 13 57 30 50 50Z" fill="#F8F4EC" opacity="0.5"/>
+          <path d="M50 50 L95 95 C87 71 70 57 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L95 95 C71 87 57 70 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L5 95 C13 71 30 57 50 50Z" fill="#F8F4EC"/>
+          <path d="M50 50 L5 95 C29 87 43 70 50 50Z" fill="#F8F4EC" opacity="0.5"/>
+          <circle cx="50" cy="50" r="11" fill="#D4614A"/>
+          <circle cx="50" cy="50" r="5.5" fill="#2B5278"/>
+          <circle cx="50" cy="50" r="2.5" fill="#5AADA8" opacity="0.8"/>
+        </svg>
+        <div class="lockup">
+          <div class="lockup-name light" style="font-size:13px;">Hale Textile Studio</div>
+          <div class="lockup-rule"></div>
+          <div class="lockup-sub light">Hawaii's Home Fabric Library</div>
+        </div>
+        <span class="logo-tile-label">Navy</span>
+      </div>
+
+      <!-- Symbol only -->
+      <div class="logo-tile tile-shell" style="background:var(--sand);">
+        <svg viewBox="0 0 100 100" width="110" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 50 L5 5 C13 29 30 43 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L5 5 C29 13 43 30 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L95 5 C87 29 70 43 50 50Z" fill="#2B5278"/>
+          <path d="M50 50 L95 5 C71 13 57 30 50 50Z" fill="#2B5278" opacity="0.5"/>
+          <path d="M50 50 L95 95 C87 71 70 57 50 50Z" fill="#5AADA8"/>
+          <path d="M50 50 L95 95 C71 87 57 70 50 50Z" fill="#5AADA8" opacity="0.5"/>
+          <path d="M50 50 L5 95 C13 71 30 57 50 50Z" fill="#2B5278"/>
+          <path d="M50 50 L5 95 C29 87 43 70 50 50Z" fill="#2B5278" opacity="0.5"/>
+          <circle cx="50" cy="50" r="11" fill="#D4614A"/>
+          <circle cx="50" cy="50" r="5.5" fill="#0A2A3A"/>
+          <circle cx="50" cy="50" r="2.5" fill="#5AADA8" opacity="0.7"/>
+        </svg>
+        <span class="logo-tile-label">Symbol Only</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ COLORS ══════════════════════════════════════════ -->
+<div class="section-dark">
+  <div class="inner">
+    <div class="section-label">03 — The Palette</div>
+    <div class="section-title">Kai Color System</div>
+    <div class="color-grid">
+      <div class="color-swatch primary" style="background:#D4614A;">
+        <div class="swatch-name">Coral</div>
+        <div class="swatch-hex">#D4614A · Primary</div>
+      </div>
+      <div class="color-swatch primary" style="background:#2B5278;">
+        <div class="swatch-name">Navy</div>
+        <div class="swatch-hex">#2B5278</div>
+      </div>
+      <div class="color-swatch" style="background:#5AADA8;">
+        <div class="swatch-name">Seafoam</div>
+        <div class="swatch-hex">#5AADA8</div>
+      </div>
+      <div class="color-swatch" style="background:#0A2A3A;">
+        <div class="swatch-name">Ocean</div>
+        <div class="swatch-hex">#0A2A3A</div>
+      </div>
+      <div class="color-swatch" style="background:#F8F4EC;">
+        <div class="swatch-name swatch-dark" style="color:rgba(10,42,58,0.6);">Shell</div>
+        <div class="swatch-hex swatch-dark" style="color:rgba(10,42,58,0.45);">#F8F4EC</div>
+      </div>
+      <div class="color-swatch" style="background:#EDE0CC;">
+        <div class="swatch-name swatch-dark" style="color:rgba(10,42,58,0.6);">Sand</div>
+        <div class="swatch-hex swatch-dark" style="color:rgba(10,42,58,0.45);">#EDE0CC</div>
+      </div>
+      <div class="color-swatch" style="background:#C8A96E;">
+        <div class="swatch-name">Gold</div>
+        <div class="swatch-hex">#C8A96E</div>
+      </div>
+    </div>
+    <div style="margin-top:48px; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;">
+      <div>
+        <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--seafoam);margin-bottom:8px;font-weight:200;">Coral</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;color:var(--shell);opacity:0.7;line-height:1.7;">Primary brand color. CTAs, accents, the logo center. The warmth of a Hawaiian sunset. Use with restraint for maximum impact.</div>
+      </div>
+      <div>
+        <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--seafoam);margin-bottom:8px;font-weight:200;">Navy</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;color:var(--shell);opacity:0.7;line-height:1.7;">Authority and craft. Headlines, borders, secondary buttons. The depth of the Pacific. Pairs with Coral as the core two-color system.</div>
+      </div>
+      <div>
+        <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--seafoam);margin-bottom:8px;font-weight:200;">Seafoam</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;color:var(--shell);opacity:0.7;line-height:1.7;">Hawaiian waters. Used in the logo and as a tertiary accent. Links, success states, decorative rules. Brings life to dark backgrounds.</div>
+      </div>
+      <div>
+        <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--seafoam);margin-bottom:8px;font-weight:200;">Shell · Sand · Gold</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;color:var(--shell);opacity:0.7;line-height:1.7;">Warm neutral backgrounds and luxury accents. Shell is the primary page background. Gold for fine rules, dividers, and premium moments.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TYPOGRAPHY ══════════════════════════════════════ -->
+<div class="section-full">
+  <div class="inner">
+    <div class="section-label">04 — Typography</div>
+    <div class="section-title">Type System</div>
+    <div class="type-grid">
+
+      <div class="type-specimen">
+        <div class="type-family">Display · Cormorant Garamond</div>
+        <div class="type-display">Hale<br><em>Textile</em></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;line-height:1.9;color:var(--ocean);opacity:0.7;margin-bottom:24px;">
+          Used for all headings, editorial text, product descriptions, and brand voice copy. The italic is especially expressive — use it for emphasis and feeling.
+        </div>
+        <div class="type-weights">
+          <div class="type-weight-row">
+            <span class="type-weight-sample" style="font-weight:300;">Cormorant Garamond Light</span>
+            <span class="type-weight-label">300</span>
+          </div>
+          <div class="type-weight-row">
+            <span class="type-weight-sample" style="font-weight:400;">Cormorant Garamond Regular</span>
+            <span class="type-weight-label">400</span>
+          </div>
+          <div class="type-weight-row">
+            <span class="type-weight-sample" style="font-style:italic;font-weight:300;">Cormorant Garamond Light Italic</span>
+            <span class="type-weight-label">300i</span>
+          </div>
+          <div class="type-weight-row">
+            <span class="type-weight-sample" style="font-weight:500;">Cormorant Garamond Medium</span>
+            <span class="type-weight-label">500 — sparingly</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-family">Utility · Josefin Sans</div>
+        <div class="type-display-josefin">Hale<br>Textile</div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-weight:300;font-size:14px;line-height:1.9;color:var(--ocean);opacity:0.7;letter-spacing:0.05em;margin-bottom:24px;">
+          Used for labels, navigation, captions, metadata, and all UI text. Always uppercase for labels. Avoid bold weights — the brand lives in thinness and space.
+        </div>
+        <div class="type-weights josefin-weights">
+          <div class="type-weight-row">
+            <span class="type-weight-sample" style="font-weight:100;font-size:14px;">JOSEFIN SANS THIN</span>
+            <span class="type-weight-label">100</span>
+          </div>
+          <div class="type-weight-row">
+            <span class="type-weight-sample" style="font-weight:200;font-size:14px;">JOSEFIN SANS EXTRALIGHT</span>
+            <span class="type-weight-label">200</span>
+          </div>
+          <div class="type-weight-row">
+            <span class="type-weight-sample" style="font-weight:300;font-size:14px;">JOSEFIN SANS LIGHT</span>
+            <span class="type-weight-label">300 — body labels</span>
+          </div>
+          <div class="type-weight-row">
+            <span class="type-weight-sample" style="font-weight:400;font-size:14px;">JOSEFIN SANS REGULAR</span>
+            <span class="type-weight-label">400 — max weight</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Type specimen block -->
+    <div style="margin-top:64px; padding:56px; background:var(--ocean);">
+      <div style="font-family:'Josefin Sans',sans-serif;font-weight:100;font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:var(--seafoam);margin-bottom:20px;">Type in Use</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,4vw,44px);color:var(--shell);line-height:1.25;margin-bottom:24px;">
+        You don't need a new sofa.<br><em>You just need us.</em>
+      </div>
+      <div style="width:40px;height:1px;background:var(--gold);margin-bottom:20px;"></div>
+      <div style="font-family:'Josefin Sans',sans-serif;font-weight:200;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(248,244,236,0.4);">Hale Textile Studio · Kakaʻako · Honolulu</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAGLINE ══════════════════════════════════════════ -->
+<div class="tagline-block">
+  <div class="tagline-text">"You don't need a new sofa.<br>You just need us."</div>
+  <div class="tagline-sub">Primary Tagline · Approved April 2026</div>
+</div>
+
+<!-- ══ USAGE RULES ══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">05 — Usage Guidelines</div>
+  <div class="section-title">Do & Don't</div>
+  <div class="usage-grid">
+    <div class="usage-card do">
+      <h3>✦ Do</h3>
+      <ul>
+        <li>Use the X-Star symbol exactly as defined — four petals, coral center</li>
+        <li>Use Cormorant Garamond Light (300) for all headings</li>
+        <li>Use Josefin Sans Thin/Light for all labels and UI text</li>
+        <li>Give the logo generous clear space — at minimum the width of one petal on all sides</li>
+        <li>Use Shell (#F8F4EC) as the default page background</li>
+        <li>Use the italic weight of Cormorant for warmth, feeling, and brand voice</li>
+        <li>Use Gold (#C8A96E) exclusively for fine rules, dividers, and premium accents</li>
+        <li>Pair Coral with Navy as the primary two-color system</li>
+      </ul>
+    </div>
+    <div class="usage-card dont">
+      <h3>✕ Don't</h3>
+      <ul>
+        <li>Don't rotate, stretch, or distort the X-Star symbol</li>
+        <li>Don't use the logo at less than 24px wide</li>
+        <li>Don't place the full-color logo on busy photographic backgrounds</li>
+        <li>Don't use bold weights of Josefin Sans — the brand is thin and spacious</li>
+        <li>Don't use purple, pink, or warm gradients — not in the palette</li>
+        <li>Don't stack multiple brand colors in a single layout without restraint</li>
+        <li>Don't use Coral as a background color for large areas — it should be an accent</li>
+        <li>Don't substitute other serif fonts for Cormorant Garamond</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DIGITAL ASSETS ══════════════════════════════════ -->
+<div class="section-full" style="background:var(--sand);">
+  <div class="inner">
+    <div class="section-label">06 — Digital Assets</div>
+    <div class="section-title">What's in This Kit</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;">
+      <div style="background:var(--white);padding:32px;">
+        <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;font-weight:200;">Website</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.8;color:var(--ocean);opacity:0.8;">index.html · favicon.svg<br>sitemap.xml · robots.txt<br>newsletter.js · contact.js<br>netlify.toml · package.json</div>
+      </div>
+      <div style="background:var(--white);padding:32px;">
+        <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;font-weight:200;">Email & Social</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.8;color:var(--ocean);opacity:0.8;">HTS_Gmail_Signature.html<br>HTS_Welcome_Email.html<br>HTS_Gmail_Profile.svg<br>HTS_OG_Image.svg (1200×630)</div>
+      </div>
+      <div style="background:var(--white);padding:32px;">
+        <div style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;font-weight:200;">Brand Colors</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.8;color:var(--ocean);opacity:0.8;">Coral #D4614A<br>Navy #2B5278<br>Seafoam #5AADA8<br>Ocean #0A2A3A<br>Shell #F8F4EC · Sand #EDE0CC · Gold #C8A96E</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════ -->
+<div class="footer">
+  <div>
+    <svg viewBox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 18 L2 2 C6 10 12 15 18 18Z" fill="#5AADA8"/>
+      <path d="M18 18 L2 2 C10 6 15 12 18 18Z" fill="#5AADA8" opacity="0.5"/>
+      <path d="M18 18 L34 2 C30 10 24 15 18 18Z" fill="#2B5278"/>
+      <path d="M18 18 L34 2 C26 6 21 12 18 18Z" fill="#2B5278" opacity="0.5"/>
+      <path d="M18 18 L34 34 C30 26 24 21 18 18Z" fill="#5AADA8"/>
+      <path d="M18 18 L34 34 C26 30 21 24 18 18Z" fill="#5AADA8" opacity="0.5"/>
+      <path d="M18 18 L2 34 C6 26 12 21 18 18Z" fill="#2B5278"/>
+      <path d="M18 18 L2 34 C10 30 15 24 18 18Z" fill="#2B5278" opacity="0.5"/>
+      <circle cx="18" cy="18" r="4.5" fill="#D4614A"/>
+      <circle cx="18" cy="18" r="2" fill="#0A2A3A"/>
+    </svg>
+  </div>
+  <div class="footer-detail">Hale Textile Studio LLC · EIN 41-4914864 · 1050 Queen St Suite 100 · Honolulu HI 96814</div>
+  <div class="footer-detail">haletextilestudio.com · @haletextilestudio</div>
+  <div class="footer-detail">Brand Kit · April 2026</div>
+</div>
+
+</body>
+</html>

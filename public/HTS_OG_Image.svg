@@ -1,0 +1,62 @@
+<svg viewBox="0 0 1200 630" width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background — coral -->
+  <rect width="1200" height="630" fill="#D4614A"/>
+
+  <!-- Subtle grain texture overlay -->
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feBlend in="SourceGraphic" mode="overlay" result="blend"/>
+    <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+  </filter>
+  <rect width="1200" height="630" fill="rgba(0,0,0,0.08)" filter="url(#grain)"/>
+
+  <!-- Left color bar -->
+  <rect x="0" y="0" width="6" height="630" fill="#2B5278"/>
+
+  <!-- Bottom tricolor bar -->
+  <rect x="0" y="618" width="400" height="12" fill="#D4614A" opacity="0.5"/>
+  <rect x="400" y="618" width="400" height="12" fill="#2B5278"/>
+  <rect x="800" y="618" width="400" height="12" fill="#5AADA8"/>
+
+  <!-- Large X-star symbol — left side -->
+  <g transform="translate(180, 315)">
+    <!-- NW petal — seafoam -->
+    <path d="M0 0 L-160 -160 C-120 -80 -60 -30 0 0Z" fill="#5AADA8"/>
+    <path d="M0 0 L-160 -160 C-80 -120 -30 -60 0 0Z" fill="#5AADA8" opacity="0.5"/>
+    <!-- NE petal — navy -->
+    <path d="M0 0 L160 -160 C120 -80 60 -30 0 0Z" fill="#2B5278"/>
+    <path d="M0 0 L160 -160 C80 -120 30 -60 0 0Z" fill="#2B5278" opacity="0.5"/>
+    <!-- SE petal — seafoam -->
+    <path d="M0 0 L160 160 C120 80 60 30 0 0Z" fill="#5AADA8"/>
+    <path d="M0 0 L160 160 C80 120 30 60 0 0Z" fill="#5AADA8" opacity="0.5"/>
+    <!-- SW petal — navy -->
+    <path d="M0 0 L-160 160 C-120 80 -60 30 0 0Z" fill="#2B5278"/>
+    <path d="M0 0 L-160 160 C-80 120 -30 60 0 0Z" fill="#2B5278" opacity="0.5"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="32" fill="#D4614A"/>
+    <circle cx="0" cy="0" r="16" fill="#1A3A58"/>
+    <circle cx="0" cy="0" r="7" fill="#5AADA8" opacity="0.6"/>
+  </g>
+
+  <!-- Right side — text -->
+  <!-- Eyebrow -->
+  <text x="420" y="200" font-family="Georgia, serif" font-size="18" letter-spacing="10" fill="rgba(255,255,255,0.6)" text-anchor="start">HONOLULU · HAWAII</text>
+
+  <!-- Main title -->
+  <text x="418" y="290" font-family="Georgia, serif" font-size="72" font-weight="normal" fill="#FFFFFF" text-anchor="start" letter-spacing="2">Hale Textile Studio</text>
+
+  <!-- Rule -->
+  <rect x="420" y="310" width="80" height="2" fill="rgba(255,255,255,0.4)"/>
+
+  <!-- Tagline -->
+  <text x="420" y="370" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.8)" text-anchor="start">Your creative space for the home.</text>
+
+  <!-- Sub -->
+  <text x="420" y="430" font-family="Arial, sans-serif" font-size="16" letter-spacing="5" fill="rgba(255,255,255,0.55)" text-anchor="start">HAWAII'S HOME FABRIC LIBRARY</text>
+
+  <!-- URL -->
+  <text x="420" y="510" font-family="Arial, sans-serif" font-size="16" letter-spacing="3" fill="rgba(255,255,255,0.45)" text-anchor="start">haletextilestudio.com</text>
+
+</svg>
