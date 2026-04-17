@@ -164,31 +164,134 @@ export default function Home() {
       </section>
 
       {/* ── Info strip ── */}
-      <div style={{ background: "#2B5278" }} className="flex max-sm:grid max-sm:grid-cols-2">
-        {[
-          { label: "Location", val: "Hub Coworking · Honolulu" },
-          { label: "Open to", val: "Designers · Homeowners · Everyone" },
-          { label: "The library holds", val: "Thousands of curated luxury fabrics" },
-          {
-            label: "Follow",
-            val: (
-              <a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.75)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 7 }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" fill="none" />
-                  <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="2" fill="none" />
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-                </svg>
-                @haletextilestudio
-              </a>
-            ),
-          },
-        ].map(({ label, val }, i) => (
-          <div key={i} style={{ flex: 1, padding: "18px 20px", borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none" }} className="max-sm:border-r-0 max-sm:border-b max-sm:border-white/[0.08]">
-            <div style={{ fontSize: 9, letterSpacing: "0.42em", textTransform: "uppercase", color: "#5AADA8", marginBottom: 3 }}>{label}</div>
-            <div style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 15, fontStyle: "italic", color: "rgba(255,255,255,0.75)", letterSpacing: "0.05em" }}>{val}</div>
-          </div>
-        ))}
+      <div
+        className="relative overflow-hidden"
+        style={{
+          background: "#2B5278",
+          borderTop: "1px solid rgba(200,169,110,0.28)",
+          borderBottom: "1px solid rgba(200,169,110,0.28)",
+        }}
+      >
+        {/* Plain-weave textile texture — warp/weft crosshatch at low opacity */}
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full"
+          style={{ opacity: 0.05 }}
+        >
+          <defs>
+            <pattern id="plain-weave" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="2" x2="8" y2="2" stroke="white" strokeWidth="1" />
+              <line x1="0" y1="6" x2="8" y2="6" stroke="white" strokeWidth="1" />
+              <line x1="2" y1="0" x2="2" y2="8" stroke="white" strokeWidth="1" />
+              <line x1="6" y1="0" x2="6" y2="8" stroke="white" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#plain-weave)" />
+        </svg>
+
+        <div className="relative flex max-sm:grid max-sm:grid-cols-2">
+          {[
+            { label: "Location", val: "Hub Coworking · Honolulu" },
+            { label: "Open to", val: "Designers · Homeowners · Everyone" },
+            { label: "The library holds", val: "Thousands of curated luxury fabrics" },
+            {
+              label: "Follow",
+              val: (
+                <a href="https://www.instagram.com/haletextilestudio/" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.78)", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+                    <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" fill="none" />
+                    <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="2" fill="none" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                  </svg>
+                  @haletextilestudio
+                </a>
+              ),
+            },
+          ].map(({ label, val }, i) => (
+            <div
+              key={i}
+              className="max-sm:border-r-0 max-sm:border-b max-sm:border-white/[0.06]"
+              style={{
+                flex: 1,
+                padding: "36px 32px",
+                borderRight: i < 3 ? "1px solid rgba(200,169,110,0.18)" : "none",
+              }}
+            >
+              <div style={{ width: 18, height: 1, background: "#C8A96E", marginBottom: 12, opacity: 0.7 }} />
+              <div style={{ fontSize: 9, letterSpacing: "0.52em", textTransform: "uppercase", color: "#C8A96E", marginBottom: 14 }}>
+                {label}
+              </div>
+              <div style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 23, fontStyle: "italic", fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.03em", lineHeight: 1.4 }}>
+                {val}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* ── Gallery strip ── */}
+      <section style={{ background: "#F8F4EC" }}>
+        {/* Header */}
+        <div style={{ textAlign: "center", padding: "72px 32px 52px" }}>
+          <div style={{ fontSize: 9, letterSpacing: "0.55em", textTransform: "uppercase", color: "#5A5248", marginBottom: 16 }}>
+            Follow Along
+          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(30px, 4vw, 50px)", fontWeight: 300, color: "#0A2A3A", letterSpacing: "0.02em", marginBottom: 18, lineHeight: 1.1 }}
+          >
+            Life at the Studio
+          </motion.h2>
+          <a
+            href="https://www.instagram.com/haletextilestudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: 10, letterSpacing: "0.45em", textTransform: "uppercase", color: "#5AADA8", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 7 }}
+          >
+            @haletextilestudio
+            <svg width="9" height="9" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Desktop: 6-image staggered row */}
+        <div className="flex items-end max-md:hidden" style={{ gap: 3 }}>
+          {[
+            { h: 300, src: "/section/Wanderlust-TivoliWP-skyblue-SolsburyFAB-sunshineyellow-1-300RGB.jpg", alt: "Wanderlust Tivoli wallpaper in sky blue with Solsbury fabric in sunshine yellow" },
+            { h: 380, src: "/section/Poolside_colorseries_hkm_300RGB.jpg", alt: "Poolside color series fabric collection" },
+            { h: 470, src: "/section/TurtleBay_colorseries_300RGB.jpg", alt: "Turtle Bay color series collection" },
+            { h: 470, src: "/section/VortexFAB_colorstory_hkm_300RGB.jpg", alt: "Vortex fabric color story" },
+            { h: 380, src: "/section/LacinatoWP%26FAB_mineral_300RGB.jpg", alt: "Mineral lacinate wallpaper and fabric" },
+            { h: 300, src: "/section/Wanderlust-MangroveTreeFAB-green%26white-SolsburyFAB-green-RailwayStripeWP-green-300RGB.jpg", alt: "Wanderlust mangrove tree fabric in green and white" },
+          ].map(({ h, src, alt }, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: i * 0.07, ease: "easeOut" as Easing }}
+              style={{ flex: 1, height: h, position: "relative", overflow: "hidden" }}
+            >
+              <Image src={src} alt={alt} fill style={{ objectFit: "cover" }} sizes="17vw" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile: 2-column grid */}
+        <div className="md:hidden grid grid-cols-2" style={{ gap: 3 }}>
+          {[
+            { src: "/section/TurtleBay_colorseries_300RGB.jpg", alt: "Turtle Bay color series collection" },
+            { src: "/section/Poolside_colorseries_hkm_300RGB.jpg", alt: "Poolside color series fabric collection" },
+            { src: "/section/VortexFAB_colorstory_hkm_300RGB.jpg", alt: "Vortex fabric color story" },
+            { src: "/section/Wanderlust-TivoliWP-skyblue-SolsburyFAB-sunshineyellow-1-300RGB.jpg", alt: "Wanderlust Tivoli wallpaper in sky blue" },
+          ].map(({ src, alt }, i) => (
+            <div key={i} style={{ height: 240, position: "relative", overflow: "hidden" }}>
+              <Image src={src} alt={alt} fill style={{ objectFit: "cover" }} sizes="50vw" />
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ── About ── */}
       <div className="grid grid-cols-2 gap-20 items-center py-20 px-10 max-w-[1200px] mx-auto max-md:grid-cols-1 max-md:gap-10 max-md:px-5 max-md:py-14">
