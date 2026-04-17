@@ -16,6 +16,25 @@ const fadeIn = (delay = 0) => ({
   transition: { duration: 1.3, delay, ease: "easeOut" as Easing },
 });
 
+function ZigzagRule({ color = "#C8A96E", ruleOpacity = 0.3, zigzagOpacity = 0.6 }: { color?: string; ruleOpacity?: number; zigzagOpacity?: number }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", padding: "0 48px" }}>
+      <div style={{ flex: 1, height: 1, background: color, opacity: ruleOpacity }} />
+      <svg
+        width="60" height="12" viewBox="0 0 60 12" fill="none"
+        aria-hidden="true"
+        style={{ margin: "0 20px", opacity: zigzagOpacity, flexShrink: 0 }}
+      >
+        <polyline
+          points="0,11 7.5,1 15,11 22.5,1 30,11 37.5,1 45,11 52.5,1 60,11"
+          stroke={color} strokeWidth="1.3" strokeLinejoin="miter" strokeLinecap="square"
+        />
+      </svg>
+      <div style={{ flex: 1, height: 1, background: color, opacity: ruleOpacity }} />
+    </div>
+  );
+}
+
 const services = [
   {
     num: "01",
@@ -108,8 +127,9 @@ export default function Home() {
             <motion.p
               {...fadeUp(0.38)}
               style={{
-                fontFamily: "var(--font-cormorant), serif",
-                fontSize: 24,
+                fontFamily: "var(--font-geist-sans), sans-serif",
+                fontSize: 18,
+                fontWeight: 300,
                 lineHeight: 1.7,
                 color: "rgba(255,255,255,0.6)",
                 margin: "0 0 48px",
@@ -213,15 +233,15 @@ export default function Home() {
               className="max-sm:border-r-0 max-sm:border-b max-sm:border-white/[0.06]"
               style={{
                 flex: 1,
-                padding: "36px 32px",
+                padding: "48px 36px",
                 borderRight: i < 3 ? "1px solid rgba(200,169,110,0.18)" : "none",
               }}
             >
-              <div style={{ width: 18, height: 1, background: "#C8A96E", marginBottom: 12, opacity: 0.7 }} />
-              <div style={{ fontSize: 9, letterSpacing: "0.52em", textTransform: "uppercase", color: "#C8A96E", marginBottom: 14 }}>
+              <div style={{ width: 24, height: 1, background: "#C8A96E", marginBottom: 14, opacity: 0.75 }} />
+              <div style={{ fontSize: 9, letterSpacing: "0.52em", textTransform: "uppercase", color: "#C8A96E", marginBottom: 18 }}>
                 {label}
               </div>
-              <div style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 23, fontStyle: "italic", fontWeight: 300, color: "rgba(255,255,255,0.85)", letterSpacing: "0.03em", lineHeight: 1.4 }}>
+              <div style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 26, fontWeight: 400, color: "rgba(255,255,255,0.88)", letterSpacing: "0.02em", lineHeight: 1.35 }}>
                 {val}
               </div>
             </div>
@@ -293,6 +313,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Zigzag divider ── */}
+      <div style={{ background: "#F8F4EC", padding: "36px 0" }}>
+        <ZigzagRule />
+      </div>
+
       {/* ── About ── */}
       <div className="grid grid-cols-2 gap-20 items-center py-20 px-10 max-w-[1200px] mx-auto max-md:grid-cols-1 max-md:gap-10 max-md:px-5 max-md:py-14">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
@@ -326,11 +351,18 @@ export default function Home() {
         </motion.div>
       </div>
 
+      {/* ── Zigzag divider ── */}
+      <div style={{ background: "#F8F4EC", padding: "36px 0" }}>
+        <ZigzagRule />
+      </div>
+
       {/* ── Services ── */}
       <section style={{ background: "#0A2A3A" }} className="py-20 px-10 max-md:py-14 max-md:px-5">
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ fontSize: 10, letterSpacing: "0.55em", textTransform: "uppercase", color: "rgba(90,173,168,0.7)", textAlign: "center", marginBottom: 10 }}>What We Offer</div>
-          <div style={{ width: 28, height: 1.5, background: "#5AADA8", margin: "10px auto 20px" }} />
+          <div style={{ fontSize: 10, letterSpacing: "0.55em", textTransform: "uppercase", color: "rgba(90,173,168,0.7)", textAlign: "center", marginBottom: 24 }}>What We Offer</div>
+          <div style={{ marginBottom: 24 }}>
+            <ZigzagRule color="#5AADA8" ruleOpacity={0.2} zigzagOpacity={0.5} />
+          </div>
           <h2 style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(28px, 3.5vw, 48px)", color: "#fff", textAlign: "center", marginBottom: 48, letterSpacing: "0.05em" }}>
             The Complete Resource<br />
             <em style={{ color: "rgba(255,255,255,0.55)" }}>for the home.</em>
@@ -342,9 +374,9 @@ export default function Home() {
                   whileHover={{ backgroundColor: "rgba(90,173,168,0.08)" }}
                   style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)", padding: "36px 28px", cursor: "pointer", height: "100%" }}
                 >
-                  <div style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 34, fontWeight: 300, color: "rgba(90,173,168,0.25)", marginBottom: 14 }}>{num}</div>
-                  <div style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 21, color: "#fff", marginBottom: 10, fontWeight: 300 }}>{title}</div>
-                  <div style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 16, fontStyle: "italic", color: "rgba(255,255,255,0.45)", lineHeight: 1.75 }}>{body}</div>
+                  <div aria-hidden="true" style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 64, fontWeight: 300, color: "rgba(90,173,168,0.2)", marginBottom: 10, lineHeight: 1 }}>{num}</div>
+                  <h3 style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 32, color: "#fff", marginBottom: 12, fontWeight: 300, lineHeight: 1.15 }}>{title}</h3>
+                  <p style={{ fontFamily: "var(--font-josefin), sans-serif", fontSize: 14, color: "rgba(255,255,255,0.45)", lineHeight: 1.75, margin: 0 }}>{body}</p>
                   <div style={{ marginTop: 20, fontSize: 10, letterSpacing: "0.38em", textTransform: "uppercase", color: "#5AADA8" }}>Learn more →</div>
                 </motion.div>
               </Link>
@@ -353,26 +385,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Instagram ── */}
-      <section style={{ background: "#F9E8E4", borderTop: "1px solid #EDE0CC" }} className="py-16 px-10 text-center max-md:py-12 max-md:px-6">
-        <div className="section-label" style={{ color: "#D4614A" }}>Follow Along</div>
-        <h2 style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(24px, 3vw, 36px)", color: "#0A2A3A", marginBottom: 12 }}>@haletextilestudio</h2>
-        <p style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 18, fontStyle: "italic", color: "#5A5248", marginBottom: 28 }}>
-          Fabric inspiration, behind-the-scenes, and new arrivals — all on Instagram.
-        </p>
-        <a
-          href="https://www.instagram.com/haletextilestudio/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#D4614A", color: "#fff", fontSize: 10, letterSpacing: "0.38em", textTransform: "uppercase", padding: "15px 28px", textDecoration: "none" }}
-        >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" fill="none" />
-            <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="2" fill="none" />
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-          </svg>
-          Follow on Instagram
-        </a>
+      {/* ── Follow Along ── */}
+      <section className="relative overflow-hidden text-center" style={{ background: "#5AADA8" }}>
+        {/* Textile weave texture */}
+        <svg aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full" style={{ opacity: 0.06 }}>
+          <defs>
+            <pattern id="follow-weave" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="2" x2="8" y2="2" stroke="white" strokeWidth="1" />
+              <line x1="0" y1="6" x2="8" y2="6" stroke="white" strokeWidth="1" />
+              <line x1="2" y1="0" x2="2" y2="8" stroke="white" strokeWidth="1" />
+              <line x1="6" y1="0" x2="6" y2="8" stroke="white" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#follow-weave)" />
+        </svg>
+
+        <div className="relative px-10 max-md:px-6" style={{ padding: "96px 40px 88px", maxWidth: 700, margin: "0 auto" }}>
+          <div style={{ fontSize: 9, letterSpacing: "0.6em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: 22 }}>
+            Follow Along
+          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(36px, 5.5vw, 64px)", fontWeight: 300, color: "#fff", lineHeight: 1.05, marginBottom: 24, letterSpacing: "0.01em" }}
+          >
+            From the studio,
+            <br />
+            <em style={{ color: "rgba(255,255,255,0.82)" }}>to your feed.</em>
+          </motion.h2>
+          <p style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 20, fontStyle: "italic", color: "rgba(255,255,255,0.72)", marginBottom: 40, lineHeight: 1.65 }}>
+            Fabric inspiration, new arrivals, and behind-the-scenes — all on Instagram.
+          </p>
+          <a
+            href="https://www.instagram.com/haletextilestudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#fff", color: "#0A2A3A", fontSize: 10, letterSpacing: "0.42em", textTransform: "uppercase", padding: "17px 34px", textDecoration: "none" }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" fill="none" />
+              <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="2" fill="none" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+            </svg>
+            @haletextilestudio
+          </a>
+        </div>
       </section>
     </>
   );

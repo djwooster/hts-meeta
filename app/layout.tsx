@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
-const cormorant = Cormorant_Garamond({
+const cormorant = Playfair_Display({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "700"],
   style: ["normal", "italic"],
 });
 
