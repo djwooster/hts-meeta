@@ -400,26 +400,26 @@ export default function Home() {
           <rect width="100%" height="100%" fill="url(#follow-weave)" />
         </svg>
 
-        <div className="relative px-10 max-md:px-6" style={{ padding: "96px 40px 88px", maxWidth: 700, margin: "0 auto" }}>
-          <div style={{ fontSize: 9, letterSpacing: "0.6em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: 22 }}>
+        <div className="relative" style={{ padding: "88px 32px 80px", maxWidth: 680, margin: "0 auto" }}>
+          <div style={{ fontFamily: "var(--font-geist-sans), sans-serif", fontSize: 10, letterSpacing: "0.48em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: 28 }}>
             Follow Along
           </div>
           <motion.h2
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-            style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(36px, 5.5vw, 64px)", fontWeight: 300, color: "#fff", lineHeight: 1.05, marginBottom: 24, letterSpacing: "0.01em" }}
+            style={{ fontFamily: "var(--font-cormorant), serif", fontSize: "clamp(30px, 4.5vw, 52px)", fontWeight: 500, lineHeight: 1.08, marginBottom: 20, letterSpacing: "0", color: "#fff" }}
           >
             From the studio,
             <br />
-            <em style={{ color: "rgba(255,255,255,0.82)" }}>to your feed.</em>
+            <em style={{ fontStyle: "italic", fontWeight: 400, color: "rgba(255,255,255,0.9)" }}>to your feed.</em>
           </motion.h2>
-          <p style={{ fontFamily: "var(--font-cormorant), serif", fontSize: 20, fontStyle: "italic", color: "rgba(255,255,255,0.72)", marginBottom: 40, lineHeight: 1.65 }}>
+          <p style={{ fontFamily: "var(--font-geist-sans), sans-serif", fontSize: 16, fontWeight: 300, color: "rgba(255,255,255,0.68)", marginBottom: 36, lineHeight: 1.65, maxWidth: 460, margin: "0 auto 36px" }}>
             Fabric inspiration, new arrivals, and behind-the-scenes — all on Instagram.
           </p>
           <a
             href="https://www.instagram.com/haletextilestudio/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#fff", color: "#0A2A3A", fontSize: 10, letterSpacing: "0.42em", textTransform: "uppercase", padding: "17px 34px", textDecoration: "none" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#fff", color: "#0A2A3A", fontFamily: "var(--font-geist-sans), sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", padding: "16px 32px", textDecoration: "none" }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" fill="none" />
