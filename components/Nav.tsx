@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Easing } from "framer-motion";
 import { HtsSymbol } from "./HtsSymbol";
 
 const links = [
@@ -16,7 +16,7 @@ const links = [
 
 const navItemVariants = {
   hidden: { opacity: 0, y: -8 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as Easing } },
 };
 
 export function Nav() {
