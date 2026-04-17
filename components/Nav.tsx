@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { HtsSymbol } from "./HtsSymbol";
 
 const links = [
-  { href: "/", label: "Home", id: "home" },
   { href: "/fabric", label: "Fabric Library" },
   { href: "/wallpaper", label: "Wallpaper" },
   { href: "/accessories", label: "Accessories" },
@@ -14,127 +14,94 @@ const links = [
   { href: "/about", label: "About" },
 ];
 
+const navItemVariants = {
+  hidden: { opacity: 0, y: -8 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 h-16 border-b-2"
-      style={{ background: "#D4614A", borderColor: "#B84D38" }}
+    <motion.nav
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 h-16 bg-coral border-b border-black/10"
+      initial={{ y: -8, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
     >
-      <Link
-        href="/"
-        className="flex items-center gap-3.5 no-underline"
-        onClick={() => setOpen(false)}
+
+      {/* Logo */}
+      <motion.div
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
       >
-        <HtsSymbol size={24} />
-        <div
-          style={{
-            fontFamily: "var(--font-cormorant), serif",
-            fontSize: 15,
-            fontWeight: 300,
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "#fff",
-            lineHeight: 1,
-          }}
-        >
-          Hale Textile Studio
-          <span
-            style={{
-              display: "block",
-              fontSize: 11,
-              color: "rgba(255,255,255,0.55)",
-              letterSpacing: "0.5em",
-              marginTop: 2,
-            }}
-          >
-            Hawaii&apos;s Home Fabric Library
+        <Link href="/" className="flex items-center gap-3 no-underline" onClick={() => setOpen(false)}>
+          <HtsSymbol size={22} />
+          <span className="font-serif text-[15px] font-light tracking-[0.16em] uppercase text-white leading-none">
+            Hale Textile Studio
           </span>
-        </div>
-      </Link>
+        </Link>
+      </motion.div>
 
       {/* Desktop nav */}
-      <ul className="hidden md:flex items-center gap-0.5 list-none">
+      <motion.ul
+        className="hidden md:flex items-center gap-1 list-none m-0 p-0"
+        initial="hidden"
+        animate="visible"
+        variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.25 } } }}
+      >
         {links.map(({ href, label }) => {
           const active = pathname === href;
           return (
-            <li key={href}>
+            <motion.li key={href} variants={navItemVariants}>
               <Link
                 href={href}
-                style={{
-                  fontSize: 11,
-                  letterSpacing: "0.45em",
-                  textTransform: "uppercase",
-                  color: active ? "#fff" : "rgba(255,255,255,0.75)",
-                  textDecoration: "none",
-                  padding: "8px 14px",
-                  borderBottom: active
-                    ? "1.5px solid #fff"
-                    : "1.5px solid transparent",
-                  transition: "color 0.2s",
-                  display: "block",
-                }}
+                className={`block px-3.5 py-2 font-sans font-light text-[13px] tracking-[0.04em] no-underline transition-colors duration-200 border-b ${
+                  active ? "text-white border-white/70" : "text-white/75 border-transparent hover:text-white"
+                }`}
               >
                 {label}
               </Link>
-            </li>
+            </motion.li>
           );
         })}
-        <li>
+        <motion.li className="ml-4" variants={navItemVariants}>
           <Link
             href="/contact"
-            style={{
-              background: "#fff",
-              color: "#D4614A",
-              fontSize: 11,
-              fontWeight: 400,
-              letterSpacing: "0.35em",
-              textTransform: "uppercase",
-              padding: "8px 18px",
-              textDecoration: "none",
-              transition: "background 0.2s",
-              display: "block",
-            }}
+            className="block px-5 py-2 font-sans font-light text-[13px] tracking-[0.04em] text-white no-underline border border-white/50 transition-colors duration-200 hover:border-white"
           >
             Visit Us
           </Link>
-        </li>
-      </ul>
+        </motion.li>
+      </motion.ul>
 
       {/* Mobile hamburger */}
-      <button
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
         className="md:hidden bg-transparent border-0 cursor-pointer p-2"
         onClick={() => setOpen((v) => !v)}
         aria-label="Menu"
       >
-        <svg width="22" height="16" fill="none">
-          <line x1="0" y1="2" x2="22" y2="2" stroke="white" strokeWidth="2" />
-          <line x1="0" y1="8" x2="22" y2="8" stroke="white" strokeWidth="2" />
-          <line x1="0" y1="14" x2="22" y2="14" stroke="white" strokeWidth="2" />
+        <svg width="20" height="14" fill="none">
+          <line x1="0" y1="1.5" x2="20" y2="1.5" stroke="white" strokeWidth="1.5" />
+          <line x1="0" y1="7" x2="20" y2="7" stroke="white" strokeWidth="1.5" />
+          <line x1="0" y1="12.5" x2="20" y2="12.5" stroke="white" strokeWidth="1.5" />
         </svg>
-      </button>
+      </motion.button>
 
       {/* Mobile dropdown */}
       {open && (
-        <div
-          className="md:hidden fixed top-14 left-0 right-0 z-50 flex flex-col gap-1 p-4"
-          style={{ background: "#B84D38" }}
-        >
+        <div className="md:hidden fixed top-16 left-0 right-0 z-50 flex flex-col px-6 py-4 bg-coral-dk border-t border-black/10">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              style={{
-                fontSize: 11,
-                letterSpacing: "0.45em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.85)",
-                textDecoration: "none",
-                padding: "10px 8px",
-              }}
+              className="font-sans text-[13px] tracking-[0.02em] text-white/80 no-underline py-3 border-b border-white/10"
             >
               {label}
             </Link>
@@ -142,19 +109,12 @@ export function Nav() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            style={{
-              fontSize: 11,
-              letterSpacing: "0.45em",
-              textTransform: "uppercase",
-              color: "#fff",
-              textDecoration: "none",
-              padding: "10px 8px",
-            }}
+            className="font-sans text-[13px] tracking-[0.02em] text-white no-underline py-3 mt-1"
           >
             Visit Us
           </Link>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 }
